@@ -4,9 +4,10 @@ import {env as publicEnv} from "$env/dynamic/public";
 import {preferences, RELAY_URL} from "$lib/tib/globals.svelte.ts";
 import {client} from "$lib/dp/client.svelte.ts";
 import {browser, dev} from "$app/environment";
-import {loadLocale, loadLocaleSync} from "wuchale/load-utils";
+import {loadLocale} from "wuchale/load-utils";
 import { locales } from "../locales/data";
 import {appLocale} from "$lib/dp/locale.svelte.ts";
+import '../locales/main.loader.svelte.js' //critical to have all catalogs available early
 
 export const ssr = false;
 
