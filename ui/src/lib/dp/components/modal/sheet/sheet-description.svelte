@@ -1,0 +1,15 @@
+<script lang="ts">
+  import {Dialog as SheetPrimitive} from "bits-ui";
+
+  let {
+    ref = $bindable(null),
+    class: className,
+    ...restProps
+  }: SheetPrimitive.DescriptionProps = $props();
+</script>
+
+<SheetPrimitive.Description
+  {...restProps}
+  bind:ref
+  class={["text-muted-foreground", className]}
+/>

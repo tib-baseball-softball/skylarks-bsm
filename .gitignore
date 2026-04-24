@@ -224,3 +224,4 @@ ui/src/locales/proxy.svelte.js
 ui/src/locales/*.compiled.main.svelte.js
 ui/src/locales/.wuchale/
 /craft/data/*.db*
+/public/

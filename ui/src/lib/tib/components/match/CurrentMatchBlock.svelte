@@ -1,7 +1,7 @@
 <script lang="ts">
   import type {Match} from "bsm.js";
   import CurrentMatchRow from "$lib/tib/components/match/CurrentMatchRow.svelte";
-  import ProgressRing from "$lib/dp/components/utils/ProgressRing.svelte";
+  import ProgressRing from "$lib/tib/components/utils/ProgressRing.svelte";
 
   interface Props {
     matches: Promise<Match[]>;

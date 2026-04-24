@@ -1,4 +1,6 @@
 <script lang="ts">
+  import "../css/dp/app.css"; // MARK: load diamond planner base styles
+  import "../css/skylarks-theme.css"; // ...and apply our custom theme (also requires setting the correct data attribute in app.html)
   import type { LayoutProps } from "./$types";
 
   const { children }: LayoutProps = $props();
@@ -6,7 +8,7 @@
 
 <div class="root-layout">
   <!-- Header -->
-  
+
 
   <!-- Grid Column -->
 
