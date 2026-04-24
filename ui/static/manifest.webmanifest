@@ -1,0 +1,14 @@
+{
+  "short_name": "Skylarks",
+  "name": "Berlin Skylarks",
+  "description": "Web App for the Berlin Skylarks Baseball & Softball Club",
+  "start_url": "/",
+  "display": "standalone",
+  "prefer_related_applications": false,
+  "theme_color": "#ba0c2f",
+  "icons": [
+    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/icon.svg", "type": "image/svg+xml", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

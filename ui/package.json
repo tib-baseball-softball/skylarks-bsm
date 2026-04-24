@@ -1,0 +1,41 @@
+{
+  "name": "skylarks-diamond-planner",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite dev",
+    "build:prod": "vite build",
+    "build:staging": "vite build --mode staging",
+    "extract": "dotenvx run -- wuchale",
+    "clean": "dotenvx run -- wuchale --clean",
+    "preview": "vite preview",
+    "test": "dotenvx run -- vitest && pnpm test:e2e",
+    "sv-check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "generate:types": "typed-pocketbase -d src/lib/model",
+    "test:e2e": "dotenvx run -- playwright test",
+    "test:ui": "dotenvx run -- playwright test --ui",
+    "test:unit": "dotenvx run -- vitest"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.61.0",
+    "@playwright/test": "^1.59.1",
+    "@sveltejs/adapter-static": "^3.0.10",
+    "@sveltejs/kit": "^2.57.1",
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@types/node": "24.10.1",
+    "@wuchale/svelte": "^0.19.3",
+    "bits-ui": "^2.17.3",
+    "bsm.js": "^0.4.0",
+    "lucide-svelte": "^1.0.1",
+    "svelte": "^5.55.4",
+    "svelte-check": "^4.4.6",
+    "svelte-persisted-state": "^1.4.0",
+    "tslib": "^2.8.1",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.8",
+    "vitest": "^4.1.4",
+    "wuchale": "^0.22.11"
+  },
+  "type": "module"
+}

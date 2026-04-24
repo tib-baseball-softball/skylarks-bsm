@@ -1,0 +1,7 @@
+.rounded-container {
+  border-radius: var(--radius-container);
+}
+
+.rounded-base {
+  border-radius: var(--radius-base);
+}

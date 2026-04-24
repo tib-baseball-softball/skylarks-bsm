@@ -1,0 +1,1241 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=n == 1 ? 0 : 1;\n"
+"Source-Language: en\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/routes/+page.svelte
+msgid "Scores"
+msgstr "Puntuaciones"
+
+#: src/lib/tib/components/navigation/StaticNavigationLinks.svelte
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "Club"
+msgstr "Club"
+
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "More Info"
+msgstr "Más información"
+
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "Details"
+msgstr "Detalles"
+
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "Adult and Youth"
+msgstr "Adultos y jóvenes"
+
+#: src/lib/dp/components/player/PlayerDataCard.svelte
+#: src/lib/tib/components/navigation/StaticNavigationLinks.svelte
+#: src/routes/(frame)/(tib)/club/+page.svelte
+#: src/routes/(frame)/(tib)/teams/+page.svelte
+msgid "Teams"
+msgstr "Equipos"
+
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "Keeping statistics"
+msgstr "Mantenimiento de estadísticas"
+
+#: src/lib/tib/components/match/MatchDetailOfficialsCard.svelte
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "Scorer"
+msgstr "Anotador"
+
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "Our Referees"
+msgstr "Nuestros árbitros"
+
+#: src/lib/tib/components/match/MatchDetailOfficialsCard.svelte
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "Umpire"
+msgstr "Árbitro"
+
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "The Lark's Nest"
+msgstr "El Nido de la Alondra"
+
+#: src/lib/dp/components/event/match/MatchDetailLocationCard.svelte
+#: src/routes/(frame)/(tib)/club/+page.svelte
+#: src/routes/(frame)/(tib)/club/ballpark/+page.svelte
+msgid "Ballpark"
+msgstr "Estadio de béisbol"
+
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "Club Administration"
+msgstr "Administración del club"
+
+#: src/routes/(frame)/(tib)/club/+page.svelte
+msgid "Officials"
+msgstr "Oficiales"
+
+#: src/lib/tib/components/match/CurrentMatchesOverviewCard.svelte
+#: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+msgid "Gamecenter"
+msgstr "Centro de juego"
+
+#: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+msgid "Show external games"
+msgstr "Mostrar juegos externos"
+
+#: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+msgid "Gameday"
+msgstr "Día de partido"
+
+#: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+msgid "Previous"
+msgstr "Anterior"
+
+#: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+msgid "Current"
+msgstr "Actual"
+
+#: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+msgid "Next"
+msgstr "Siguiente"
+
+#: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+msgid "All"
+msgstr "Todos"
+
+#: src/lib/tib/components/match/CurrentMatchBlock.svelte
+#: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+msgid "Loading matches..."
+msgstr "Cargando partidos..."
+
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#: src/lib/tib/components/match/CurrentMatchBlock.svelte
+#: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
+msgid "error loading matches: {0}"
+msgstr "error al cargar los partidos: {0}"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Favorite Team"
+msgstr "Equipo favorito"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Quick Details"
+msgstr "Detalles rápidos"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "You have not selected a favorite team yet."
+msgstr "Aún no ha seleccionado un equipo favorito."
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Team Stats Links"
+msgstr "Enlaces a las estadísticas del equipo"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Data per League"
+msgstr "Datos por Liga"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "A single team can be associated to several leagues per season in BSM."
+msgstr "Un solo equipo puede estar asociado a varias ligas por temporada en BSM."
+
+#. 0: favoriteTeam?.name
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "The team \"{0}\" does not have a league entry in this league."
+msgstr "El equipo \"{0}\" no tiene una entrada de liga en esta liga."
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+msgid "Standings"
+msgstr "Clasificaciones"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Playoffs"
+msgstr "Playoffs"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Graphs and Mood"
+msgstr "Gráficos y estado de ánimo"
+
+#: src/lib/tib/components/match/GamecenterMatchSection.svelte
+#: src/lib/tib/components/navigation/StaticNavigationLinks.svelte
+#: src/lib/tib/components/stats/StatsBlock.svelte
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Games"
+msgstr "Partidos"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Previous Game"
+msgstr "Partido anterior"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "No previous game found."
+msgstr "No se encontró ningún partido anterior."
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Next Game"
+msgstr "Próximo partido"
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "No next game found."
+msgstr "No se encontró ningún próximo partido."
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "No data found."
+msgstr "No se encontraron datos."
+
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Loading..."
+msgstr "Cargando..."
+
+#. 0: error.message
+#: src/routes/(frame)/(tib)/favorite/+page.svelte
+msgid "Error: {0}"
+msgstr "Error: {0}"
+
+#: src/lib/tib/components/navigation/StaticNavigationLinks.svelte
+#: src/routes/(frame)/(tib)/ligen/+page.svelte
+msgid "Leagues"
+msgstr "Ligas"
+
+#: src/routes/(frame)/(tib)/ligen/+page.svelte
+msgid "Loading Leagues..."
+msgstr "Cargando Ligas..."
+
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#. 0: error.message
+#: src/routes/(frame)/(tib)/club/ballpark/+page.svelte
+#: src/routes/(frame)/(tib)/club/officials/+page.svelte
+#: src/routes/(frame)/(tib)/club/scorer/+page.svelte
+#: src/routes/(frame)/(tib)/club/umpire/+page.svelte
+#: src/routes/(frame)/(tib)/league_entries/[entry]/+page.svelte
+#: src/routes/(frame)/(tib)/ligen/+page.svelte
+#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
+#: src/routes/(frame)/(tib)/players/[id]/+page.svelte
+#: src/routes/(frame)/(tib)/teams/+page.svelte
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+msgid "error loading: {0}"
+msgstr "error al cargar: {0}"
+
+#: src/routes/(frame)/(tib)/teams/+page.svelte
+msgid "Loading Teams..."
+msgstr "Cargando equipos..."
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Location"
+msgstr "Ubicación"
+
+#: src/lib/tib/components/club/officials/ClubOfficialDetailCard.svelte
+#: src/lib/tib/components/favorite/FavoriteTeamInfoCard.svelte
+#: src/lib/tib/components/league/LeagueDetailInfoCard.svelte
+#: src/lib/tib/components/stats/StatsTableContent.svelte
+#: src/lib/tib/components/table/LeaderboardTable.svelte
+#: src/lib/tib/components/team/TeamDetailInfoCard.svelte
+msgid "Name"
+msgstr "Nombre"
+
+#: src/lib/tib/components/match/MatchMainInfoSection.svelte
+msgid "Status"
+msgstr "Estado"
+
+#: src/lib/tib/components/favorite/LeagueInfoCard.svelte
+#: src/lib/tib/components/league/LeagueDetailInfoCard.svelte
+#: src/lib/tib/components/team/TeamDetailInfoCard.svelte
+msgid "Acronym"
+msgstr "Acrónimo"
+
+#: src/lib/tib/components/favorite/ClubTeamPicker.svelte
+msgid "None"
+msgstr "Ninguno"
+
+#: src/lib/tib/components/club/officials/ClubOfficialDetailCard.svelte
+msgid "Title"
+msgstr "Título"
+
+#: src/lib/dp/components/player/PlayerDataCard.svelte
+msgid "Bats"
+msgstr "Batea"
+
+#: src/lib/dp/components/player/PlayerDataCard.svelte
+msgid "Throws"
+msgstr "Lanza"
+
+#: src/lib/dp/components/event/match/MatchDetailLocationCard.svelte
+msgid "City"
+msgstr "Ciudad"
+
+#: src/lib/tib/components/favorite/FavoriteTeamInfoCard.svelte
+msgid "League"
+msgstr "Liga"
+
+#: src/lib/tib/components/table/StandingsTable.svelte
+#: src/routes/(frame)/(tib)/league_entries/[entry]/+page.svelte
+msgid "Team"
+msgstr "Equipo"
+
+#: src/lib/tib/components/league/LeagueDetailInfoCard.svelte
+#: src/lib/tib/components/team/TeamDetailInfoCard.svelte
+msgid "Age Group"
+msgstr "Grupo de edad"
+
+#: src/lib/dp/components/player/PlayerDataCard.svelte
+msgid "Not specified"
+msgstr "No especificado"
+
+#: src/lib/dp/components/player/PlayerDataCard.svelte
+msgid "Age"
+msgstr "Edad"
+
+#: src/lib/dp/components/player/PlayerDataCard.svelte
+msgid "Member since"
+msgstr "Miembro desde"
+
+#: src/lib/dp/components/player/PlayerDataCard.svelte
+msgid "Positions"
+msgstr "Posiciones"
+
+#: src/lib/dp/components/player/PlayerHeaderSection.svelte
+#: src/lib/dp/components/player/PlayerRow.svelte
+msgid "Player fallback"
+msgstr "Reserva de jugador"
+
+#: src/lib/dp/components/player/TeamPlayerSection.svelte
+msgid "Visualization"
+msgstr "Visualización"
+
+#: src/lib/dp/components/player/TeamPlayerSection.svelte
+#: src/lib/tib/components/club/licenses/LicenseDetailHolderCard.svelte
+msgid "Number"
+msgstr "Número"
+
+#: src/lib/dp/components/player/TeamPlayerSection.svelte
+msgid "Image"
+msgstr "Imagen"
+
+#: src/lib/tib/components/boxscore/Linescore.svelte
+#: src/lib/tib/components/boxscore/MatchBoxscoreOffensiveTable.svelte
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "R"
+msgstr "C"
+
+#: src/lib/tib/components/boxscore/Linescore.svelte
+#: src/lib/tib/components/boxscore/MatchBoxscoreOffensiveTable.svelte
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "H"
+msgstr "H"
+
+#: src/lib/tib/components/boxscore/Linescore.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "E"
+msgstr "E"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "BATTING"
+msgstr "BATEO"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "2B:"
+msgstr "2B:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "3B:"
+msgstr "3B:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "HR:"
+msgstr "HR:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "SH:"
+msgstr "SH:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "SF:"
+msgstr "SF:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "BASERUNNING"
+msgstr "CARRERA DE BASES"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "SB:"
+msgstr "SB:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "CS:"
+msgstr "CS:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "FIELDING"
+msgstr "FILDEO"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "E:"
+msgstr "E:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "PB:"
+msgstr "PB:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "DP:"
+msgstr "DP:"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreAdditionalStatsSection.svelte
+msgid "TP:"
+msgstr "TP:"
+
+#. 0: teamName
+#: src/lib/tib/components/boxscore/MatchBoxscoreOffensiveTable.svelte
+msgid "{0} (Batters)"
+msgstr "{0} (Bateadores)"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreOffensiveTable.svelte
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "AB"
+msgstr "VB"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreOffensiveTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "RBI"
+msgstr "RBI"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreOffensiveTable.svelte
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "K"
+msgstr "SO"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreOffensiveTable.svelte
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "BB"
+msgstr "BB"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreOffensiveTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "AVG"
+msgstr "AVG"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreOffensiveTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "OPS"
+msgstr "OPS"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreSection.svelte
+msgid "Away Team"
+msgstr "Equipo Visitante"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreSection.svelte
+msgid "Home Team"
+msgstr "Equipo Local"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreSection.svelte
+msgid "Linescore"
+msgstr "Resultado por entrada"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreSection.svelte
+msgid "Offensive"
+msgstr "Ofensiva"
+
+#: src/lib/tib/components/boxscore/MatchBoxscoreSection.svelte
+#: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
+#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
+msgid "Pitching"
+msgstr "Lanzamiento"
+
+#. 0: teamName
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+msgid "{0} (Pitchers)"
+msgstr "{0} (Lanzadores)"
+
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "IP"
+msgstr "JI"
+
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "BF"
+msgstr "BF"
+
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "ER"
+msgstr "CL"
+
+#: src/lib/tib/components/boxscore/MatchBoxscorePitchingTable.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "ERA"
+msgstr "PCL"
+
+#: src/lib/tib/components/club/ClubInfoSection.svelte
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Skylarks Logo"
+msgstr "Logotipo de Skylarks"
+
+#: src/lib/tib/components/favorite/FavoriteTeamInfoCard.svelte
+msgid "Season"
+msgstr "Temporada"
+
+#: src/lib/tib/components/favorite/LeagueInfoCard.svelte
+msgid "Record"
+msgstr "Récord"
+
+#: src/lib/tib/components/favorite/LeagueInfoCard.svelte
+#: src/lib/tib/components/favorite/WinningPercentageGauge.svelte
+msgid "Pct."
+msgstr "Pct."
+
+#: src/lib/tib/components/favorite/LeagueInfoCard.svelte
+#: src/lib/tib/components/favorite/WinningPercentageContainer.svelte
+msgid "Rank"
+msgstr "Clasificación"
+
+#: src/lib/tib/components/favorite/PlayoffSheet.svelte
+msgid "Show Playoff Series"
+msgstr "Mostrar series de playoffs"
+
+#: src/lib/tib/components/favorite/PlayoffSheet.svelte
+msgid "Playoff Series"
+msgstr "Series de playoffs"
+
+#. 0: playoffSeries.leading_team.name
+#: src/lib/tib/components/favorite/PlayoffSheet.svelte
+msgid "{0} lead series"
+msgstr "{0} lidera la serie"
+
+#. 0: playoffSeries.leading_team.name
+#: src/lib/tib/components/favorite/PlayoffSheet.svelte
+msgid "{0} win series"
+msgstr "{0} gana la serie"
+
+#: src/lib/tib/components/favorite/PlayoffSheet.svelte
+msgid "Series tied"
+msgstr "Series empatadas"
+
+#. 0: playoffSeries.series_length
+#: src/lib/tib/components/favorite/PlayoffSheet.svelte
+msgid "Length of series: Best of {0}"
+msgstr "Duración de la serie: Lo mejor de {0}"
+
+#: src/lib/tib/components/favorite/StreakEmoji.svelte
+msgid "Team Mood"
+msgstr "Estado de ánimo del equipo"
+
+#: src/lib/tib/components/favorite/StreakEmoji.svelte
+msgid "Clubhouse champagne celebration or dugout fights?"
+msgstr "¿Celebración con champán en el club o peleas en el dugout?"
+
+#: src/lib/tib/components/favorite/StreakGraphSection.svelte
+msgid "Graph"
+msgstr "Gráfico"
+
+#: src/lib/tib/components/favorite/StreakGraphSection.svelte
+#: src/lib/tib/components/favorite/WinningPercentageContainer.svelte
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#: src/lib/tib/components/favorite/StreakGraphSection.svelte
+msgid "Series"
+msgstr "Series"
+
+#: src/lib/tib/components/favorite/StreakGraphSection.svelte
+#: src/lib/tib/components/favorite/StreakGraphSection.svelte
+msgid "No data available."
+msgstr "No hay datos disponibles."
+
+#: src/lib/tib/components/favorite/WinningPercentageContainer.svelte
+msgid "Wins/Losses"
+msgstr "Victorias/Derrotas"
+
+#: src/lib/tib/components/favorite/ClubTeamPicker.svelte
+msgid "Select Team:"
+msgstr "Seleccionar equipo:"
+
+#: src/lib/tib/components/favorite/LeagueChartGraph.svelte
+msgid "Wins"
+msgstr "Victorias"
+
+#: src/lib/tib/components/favorite/LeagueChartGraph.svelte
+msgid "Total Wins"
+msgstr "Victorias Totales"
+
+#: src/lib/tib/components/favorite/LeagueChartGraph.svelte
+msgid "League Wins Visualisation"
+msgstr "Visualización de victorias de la liga"
+
+#: src/lib/tib/components/league/LeagueFilter.svelte
+msgid "All Leagues"
+msgstr "Todas las ligas"
+
+#: src/lib/tib/components/gameReport/GameReportHeader.svelte
+msgid "Veröffentlicht:"
+msgstr "Publicado:"
+
+#: src/lib/tib/components/gameReport/GameReportHeader.svelte
+msgid "Liga:"
+msgstr "Liga:"
+
+#: src/lib/tib/components/gameReport/GameReportHeader.svelte
+msgid "Autor:"
+msgstr "Autor:"
+
+#: src/lib/tib/components/gameReport/GameReport.svelte
+msgid "Bericht Spiel 1"
+msgstr "Informe partido 1"
+
+#: src/lib/tib/components/gameReport/GameReport.svelte
+msgid "Bericht Spiel 2"
+msgstr "Informe partido 2"
+
+#: src/lib/tib/components/gameReport/GameReport.svelte
+msgid "Ausblick"
+msgstr "Perspectiva"
+
+#: src/lib/tib/components/gameReport/GameReport.svelte
+msgid "Bildergalerie"
+msgstr "Galería de imágenes"
+
+#: src/lib/tib/components/favorite/WinsOverSeasonChart.svelte
+#: src/lib/tib/components/favorite/WinsOverSeasonChart.svelte
+msgid "Wins Count"
+msgstr "Conteo de victorias"
+
+#: src/lib/tib/components/favorite/WinsOverSeasonChart.svelte
+msgid "Gamedays"
+msgstr "Días de juego"
+
+#: src/lib/tib/components/favorite/WinsOverSeasonChart.svelte
+msgid "Season Progression"
+msgstr "Progresión de la temporada"
+
+#: src/lib/tib/components/league/LeagueDetailInfoCard.svelte
+#: src/lib/tib/components/team/TeamDetailInfoCard.svelte
+msgid "Sport"
+msgstr "Deporte"
+
+#: src/lib/tib/components/match/CurrentMatchBlock.svelte
+msgid "No games for this timeframe."
+msgstr "No hay partidos para este período de tiempo."
+
+#: src/lib/tib/components/match/ContentFilteredUnavailable.svelte
+msgid "There is no data to display for the selected filters."
+msgstr "No hay datos para mostrar con los filtros seleccionados."
+
+#: src/lib/tib/components/match/CurrentMatchesOverviewCard.svelte
+msgid "Current Games"
+msgstr "Partidos actuales"
+
+#: src/lib/tib/components/match/CurrentMatchesOverviewCard.svelte
+msgid "Previous <0>Gameday</0>"
+msgstr "Anterior <0>Día de partido</0>"
+
+#: src/lib/tib/components/match/CurrentMatchesOverviewCard.svelte
+msgid "Current <0>Gameday</0>"
+msgstr "Actual <0>Día de partido</0>"
+
+#: src/lib/tib/components/match/CurrentMatchesOverviewCard.svelte
+msgid "Next <0>Gameday</0>"
+msgstr "Siguiente <0>Día de partido</0>"
+
+#: src/lib/tib/components/match/MatchDetailStatsCard.svelte
+msgid "Liga"
+msgstr "Liga"
+
+#: src/lib/tib/components/match/MatchDetailStatsCard.svelte
+msgid "Spiel-ID"
+msgstr "ID del partido"
+
+#: src/lib/tib/components/match/MatchDetailStatsCard.svelte
+msgid "geplante Innings"
+msgstr "entradas planificadas"
+
+#: src/lib/tib/components/match/MatchDetailStatsCard.svelte
+msgid "Link zum Scoresheet"
+msgstr "Enlace a la hoja de anotación"
+
+#: src/lib/tib/components/match/MatchDetailStatsCard.svelte
+msgid "Kein Scoresheet vorhanden."
+msgstr "No hay hoja de anotación disponible."
+
+#: src/lib/tib/components/match/MatchDetailOfficialsCard.svelte
+msgid "No umpires assigned yet."
+msgstr "Aún no se han asignado árbitros."
+
+#: src/lib/tib/components/match/MatchDetailOfficialsCard.svelte
+msgid "No scorers assigned yet."
+msgstr "Aún no se han asignado anotadores."
+
+#: src/lib/tib/components/match/MatchMainInfoSection.svelte
+msgid "Main Info"
+msgstr "Información principal"
+
+#: src/lib/tib/components/match/MatchMainInfoSection.svelte
+msgid "Date"
+msgstr "Fecha"
+
+#: src/lib/tib/components/match/CurrentMatchRow.svelte
+msgid "PPD"
+msgstr "APL"
+
+#: src/lib/tib/components/match/ShareButton.svelte
+msgid "Share game data using your browser"
+msgstr "Compartir datos del juego usando su navegador"
+
+#: src/lib/tib/components/match/ShareButton.svelte
+msgid "Share Game <0/>"
+msgstr "Compartir juego <0/>"
+
+#: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
+#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
+msgid "Batting"
+msgstr "Bateo"
+
+#: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
+#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
+msgid "Fielding"
+msgstr "Fildeo"
+
+#: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
+msgid "Total"
+msgstr "Total"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "Batting Average"
+msgstr "Promedio de bateo"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "On Base Percentage"
+msgstr "Porcentaje de embasado"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "Slugging Average"
+msgstr "Promedio de slugging"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "On Base Plus Slugging"
+msgstr "En base más slugging"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "Wins - Losses"
+msgstr "Victorias - Derrotas"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "Innings Pitched"
+msgstr "Entradas lanzadas"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "Earned Run Average"
+msgstr "Promedio de carreras limpias"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "Walks & Hits per Innings Pitched"
+msgstr "Bases por bolas y hits por entradas lanzadas"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "Innings Played"
+msgstr "Entradas jugadas"
+
+#: src/lib/tib/components/stats/StatsBlock.svelte
+msgid "Fielding Average"
+msgstr "Promedio de fildeo"
+
+#: src/lib/tib/components/table/LeaderboardTable.svelte
+msgid "Value"
+msgstr "Valor"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "G"
+msgstr "J"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "GS"
+msgstr "JJ"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "PA"
+msgstr "AP"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "2B"
+msgstr "2B"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "3B"
+msgstr "3B"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "HR"
+msgstr "HR"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "IBB"
+msgstr "IBB"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "HP"
+msgstr "HP"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "SB"
+msgstr "SB"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "CS"
+msgstr "CS"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "SH"
+msgstr "SH"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "SF"
+msgstr "SF"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "I"
+msgstr "I"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "OBP"
+msgstr "OBP"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "SLG"
+msgstr "SLG"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "CG"
+msgstr "CG"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "BK"
+msgstr "BK"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "WP"
+msgstr "WP"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "HBP"
+msgstr "HBP"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "WHIP"
+msgstr "WHIP"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/table/StandingsTable.svelte
+msgid "W"
+msgstr "G"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+#: src/lib/tib/components/table/StandingsTable.svelte
+msgid "L"
+msgstr "P"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "SV"
+msgstr "SV"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "A"
+msgstr "A"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "PO"
+msgstr "PO"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "DP"
+msgstr "DP"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "TP"
+msgstr "TP"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "PB"
+msgstr "PB"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "FA"
+msgstr "FA"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "P"
+msgstr "P"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "C"
+msgstr "C"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "1B"
+msgstr "1B"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "SS"
+msgstr "SS"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "LF"
+msgstr "LF"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "CF"
+msgstr "CF"
+
+#: src/lib/tib/components/stats/StatsHeaderRow.svelte
+msgid "RF"
+msgstr "RF"
+
+#: src/lib/tib/components/team/TeamDetailInfoCard.svelte
+msgid "Antritt außer Konkurrenz (aK):"
+msgstr "Participación fuera de competición (aK):"
+
+#: src/lib/tib/components/table/StandingsTable.svelte
+msgid "Win %"
+msgstr "% de victorias"
+
+#: src/lib/tib/components/table/StandingsTable.svelte
+msgid "GB"
+msgstr "PD"
+
+#: src/lib/tib/components/table/StandingsTable.svelte
+msgid "Serie"
+msgstr "Serie"
+
+#: src/lib/tib/components/stats/StatsTableContent.svelte
+msgid "Saison"
+msgstr "Temporada"
+
+#: src/lib/tib/components/stats/StatsTableContent.svelte
+msgid "No data available for this category."
+msgstr "No hay datos disponibles para esta categoría."
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Club Details"
+msgstr "Detalles del club"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Team Basics"
+msgstr "Datos básicos del equipo"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Name:"
+msgstr "Nombre:"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Acronym:"
+msgstr "Acrónimo:"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Main Club:"
+msgstr "Club principal:"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Achievements"
+msgstr "Logros"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Legal Info"
+msgstr "Información legal"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Chairman:"
+msgstr "Presidente:"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Registered Association:"
+msgstr "Asociación registrada:"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Court:"
+msgstr "Tribunal:"
+
+#: src/lib/tib/components/club/ballpark/BallparkDetailCard.svelte
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Address:"
+msgstr "Dirección:"
+
+#: src/routes/(frame)/(tib)/club/details/+page.svelte
+msgid "Street:"
+msgstr "Calle:"
+
+#: src/routes/(frame)/(tib)/club/scorer/+page.svelte
+msgid "Scorer Licenses"
+msgstr "Licencias de anotador"
+
+#: src/routes/(frame)/(tib)/club/scorer/+page.svelte
+#: src/routes/(frame)/(tib)/club/umpire/+page.svelte
+msgid "Loading Licenses..."
+msgstr "Cargando licencias..."
+
+#: src/routes/(frame)/(tib)/club/officials/+page.svelte
+msgid "Club Officials"
+msgstr "Responsables del club"
+
+#: src/routes/(frame)/(tib)/club/ballpark/+page.svelte
+#: src/routes/(frame)/(tib)/club/officials/+page.svelte
+msgid "Loading Club Officials..."
+msgstr "Cargando los responsables del club..."
+
+#: src/routes/(frame)/(tib)/club/umpire/+page.svelte
+msgid "Umpire Licenses"
+msgstr "Licencias de árbitro"
+
+#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+msgid "Information"
+msgstr "Información"
+
+#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
+msgid "League Stats"
+msgstr "Estadísticas de la liga"
+
+#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
+msgid "Statistics about current league leaders in various statistical categories can be found on a dedicated subpage."
+msgstr "Las estadísticas sobre los actuales líderes de la liga en varias categorías estadísticas se pueden encontrar en una subpágina dedicada."
+
+#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
+msgid "Go to stats"
+msgstr "Ir a estadísticas"
+
+#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
+msgid "Tabelle"
+msgstr "Tabla"
+
+#. 0: data.teamName ?? "Team"
+#: src/routes/(frame)/(tib)/league_entries/[entry]/+page.svelte
+msgid "Stats for {0}"
+msgstr "Estadísticas de {0}"
+
+#. 0: clubTeam.name; 1: clubTeam.season
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+msgid "{0} (Saison {1})"
+msgstr "{0} (Temporada {1})"
+
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+msgid "No Standings available."
+msgstr "No hay clasificaciones disponibles."
+
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+msgid "Players"
+msgstr "Jugadores"
+
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+msgid "No Players found for this team."
+msgstr "No se encontraron jugadores para este equipo."
+
+#: src/routes/(frame)/(tib)/players/[id]/+page.svelte
+#: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
+msgid "Stats"
+msgstr "Estadísticas"
+
+#. 0: batting.person?.first_name; 1: batting.person?.last_name
+#: src/routes/(frame)/(tib)/players/[id]/+page.svelte
+msgid "Player Profile for {0} {1}"
+msgstr "Perfil del jugador para {0} {1}"
+
+#: src/routes/(frame)/(tib)/players/[id]/+page.svelte
+msgid "Profile Data"
+msgstr "Datos del perfil"
+
+#. 0: error.message
+#: src/routes/(frame)/(tib)/players/[id]/+page.svelte
+msgid "An error occurred fetching player data: {0}.<0/> The data source might be temporarily unavailable, please try again later."
+msgstr "Se produjo un error al obtener los datos del jugador: {0}.<0/> La fuente de datos podría no estar disponible temporalmente, inténtelo de nuevo más tarde."
+
+#: src/lib/tib/components/club/ballpark/BallparkDetailCard.svelte
+msgid "Ballpark Name"
+msgstr "Nombre del campo de béisbol"
+
+#: src/lib/tib/components/club/ballpark/BallparkDetailCard.svelte
+msgid "Address Addon"
+msgstr "Complemento de dirección"
+
+#: src/lib/tib/components/club/ballpark/BallparkDetailCard.svelte
+msgid "Capacity"
+msgstr "Capacidad"
+
+#: src/lib/tib/components/club/ballpark/BallparkDetailCard.svelte
+msgid "Seats"
+msgstr "Asientos"
+
+#: src/lib/dp/components/event/match/MatchDetailLocationCard.svelte
+msgid "Address"
+msgstr "Dirección"
+
+#: src/lib/dp/components/event/match/MatchDetailLocationCard.svelte
+msgid "Open in Google Maps"
+msgstr "Abrir en Google Maps"
+
+#: src/lib/dp/components/event/match/MatchDetailLocationCard.svelte
+msgid "Open in Apple Maps"
+msgstr "Abrir en Apple Maps"
+
+#: src/lib/tib/components/club/ballpark/BallparkGrid.svelte
+msgid "No ballparks found."
+msgstr "No se encontraron campos de béisbol."
+
+#: src/lib/tib/components/club/licenses/LicenseDetailCard.svelte
+msgid "Level"
+msgstr "Nivel"
+
+#: src/lib/tib/components/club/licenses/LicenseDetailCard.svelte
+#: src/lib/tib/components/club/licenses/LicenseList.svelte
+msgid "Baseball"
+msgstr "Béisbol"
+
+#: src/lib/tib/components/club/licenses/LicenseDetailCard.svelte
+#: src/lib/tib/components/club/licenses/LicenseList.svelte
+msgid "Softball"
+msgstr "Sóftbol"
+
+#: src/lib/tib/components/club/licenses/LicenseDetailCard.svelte
+msgid "Sleeve Number"
+msgstr "Número de manga"
+
+#: src/lib/tib/components/club/licenses/LicenseDetailHolderCard.svelte
+msgid "Holder"
+msgstr "Titular"
+
+#: src/lib/tib/components/club/licenses/LicenseDetailHolderCard.svelte
+msgid "Valid until"
+msgstr "Válido hasta"
+
+#: src/lib/tib/components/club/licenses/LicenseDetailHolderCard.svelte
+msgid "Relative Time"
+msgstr "Tiempo relativo"
+
+#. 0: level
+#: src/lib/tib/components/club/licenses/LicenseLevelIndicator.svelte
+msgid "License level {0}:"
+msgstr "Nivel de licencia {0}:"
+
+#: src/lib/tib/components/club/licenses/LicenseList.svelte
+msgid "No baseball licenses available."
+msgstr "No hay licencias de béisbol disponibles."
+
+#: src/lib/tib/components/club/licenses/LicenseList.svelte
+msgid "No softball licenses available."
+msgstr "No hay licencias de sóftbol disponibles."
+
+#: src/lib/tib/components/club/officials/ClubOfficialDetailCard.svelte
+msgid "Category"
+msgstr "Categoría"
+
+#: src/lib/tib/components/club/officials/ClubOfficialDetailCard.svelte
+msgid "Since"
+msgstr "Desde"
+
+#: src/lib/tib/components/club/officials/ClubOfficialDetailCard.svelte
+msgid "Contact"
+msgstr "Contacto"
+
+#: src/lib/tib/components/club/officials/ClubOfficialsList.svelte
+msgid "No club officials available."
+msgstr "No hay funcionarios del club disponibles."
+
+#: src/routes/(frame)/(tib)/club/ballpark/[id]/+page.svelte
+msgid "Ballpark Details"
+msgstr "Detalles del campo de béisbol"
+
+#: src/routes/(frame)/(tib)/club/ballpark/[id]/+page.svelte
+msgid "How to get there"
+msgstr "Cómo llegar"
+
+#: src/routes/(frame)/(tib)/club/license/[id]/+page.svelte
+msgid "License Details"
+msgstr "Detalles de la licencia"
+
+#: src/routes/(frame)/(tib)/club/license/[id]/+page.svelte
+msgid "No license data due to error."
+msgstr "No hay datos de licencia debido a un error."
+
+#: src/routes/(frame)/(tib)/club/officials/[id]/+page.svelte
+msgid "Official Details"
+msgstr "Detalles del oficial"
+
+#. 0: data.leagueGroup.name; 1: data.leagueGroup.season
+#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
+msgid "Leaderboards for {0} ({1})"
+msgstr "Clasificaciones para {0} ({1})"
+
+#. 0: match.match_id
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "Details zu Spiel {0}"
+msgstr "Detalles del partido {0}"
+
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "Game Data"
+msgstr "Datos del partido"
+
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "Box Score"
+msgstr "Marcador"
+
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "Game Report"
+msgstr "Informe del partido"
+
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "Box Score for this game could not be loaded or is unavailable."
+msgstr "El marcador de este partido no se pudo cargar o no está disponible."
+
+#. 0: error.message
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "error loading box score: {0}"
+msgstr "error al cargar el marcador: {0}"
+
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "No Game Report available."
+msgstr "No hay informe del partido disponible."
+
+#. 0: error.message
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "error loading Game Report: {0}"
+msgstr "error al cargar el informe del partido: {0}"
+
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "Caveat"
+msgstr "Advertencia"
+
+#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
+msgid "Sharing games does not work on Firefox."
+msgstr "Compartir partidos no funciona en Firefox."
