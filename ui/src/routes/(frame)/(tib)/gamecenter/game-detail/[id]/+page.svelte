@@ -9,7 +9,6 @@
   import type {PageProps} from "./$types";
   import ContentFilteredUnavailable from "$lib/tib/components/match/ContentFilteredUnavailable.svelte";
   import GameReport from "$lib/tib/components/gameReport/GameReport.svelte";
-  import ShareButton from "$lib/tib/components/match/ShareButton.svelte";
   import ProgressRing from "$lib/tib/components/utils/ProgressRing.svelte";
 
   let {data}: PageProps = $props();
@@ -96,14 +95,6 @@
   </Tabs.Root>
 </section>
 
-<section class="share-section">
-  <ShareButton {match}/>
-  <details class="share-caveat">
-    <summary class="caveat-summary">Caveat</summary>
-    <p class="caveat-text">Sharing games does not work on Firefox.</p>
-  </details>
-</section>
-
 <style>
   .page-title {
     margin-top: calc(var(--spacing) * 3);
@@ -120,7 +111,7 @@
   .tabs-section {
     margin-bottom: calc(var(--spacing) * 8);
   }
-  
+
   :global(.tabs-section .tabs-list) {
     border: 1px var(--tw-border-style);
   }
@@ -151,24 +142,6 @@
       /* 2xl */
       max-width: 70%;
     }
-  }
-
-  .share-section {
-    margin-block: calc(var(--spacing) * 5);
-  }
-
-  .share-caveat {
-    margin-top: calc(var(--spacing) * 4);
-  }
-
-  .caveat-summary {
-    font-weight: 300;
-    cursor: pointer;
-  }
-
-  .caveat-text {
-    font-size: var(--text-sm);
-    font-weight: 300;
   }
 
   .content-wrapper {

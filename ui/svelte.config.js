@@ -32,7 +32,7 @@ const config = {
           "https://*.tib-baseball.de",
           "https://*.berlinskylarks.de",
           "https://*.ddev.site",
-          "http://127.0.0.1:8090",
+          "http://localhost:8090",
         ],
         "img-src": [
           "self",
@@ -41,7 +41,7 @@ const config = {
           "https://*.tib-baseball.de",
           "https://*.berlinskylarks.de",
           "https://*.ddev.site",
-          "http://127.0.0.1:8090",
+          "http://localhost:8090",
           "https://*.tile.openstreetmap.de",
         ],
         "script-src": ["self"],

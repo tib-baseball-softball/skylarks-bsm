@@ -3,13 +3,31 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 	"time"
 
 	"git.berlinskylarks.de/skylarks-bsm/internal/tib"
 	"git.berlinskylarks.de/tib-baseball/bsm-go"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"github.com/go-chi/cors"
+	"github.com/subosito/gotenv"
 )
+
+// / Loads environment.
+//   - Locally: from .env file
+//   - Production: from container env
+func init() {
+	_ = gotenv.Load()
+
+	if os.Getenv("APPLICATION_CONTEXT") == "" {
+		log.Fatal("APPLICATION_CONTEXT not set, error loading environment variables")
+	}
+
+	if os.Getenv("BSM_API_KEY") == "" || os.Getenv("BSM_API_HOST") == "" {
+		log.Fatal("BSM API key or host not set, error loading environment variables")
+	}
+}
 
 func main() {
 	r := chi.NewRouter()
@@ -18,6 +36,15 @@ func main() {
 	r.Use(middleware.RealIP)
 	r.Use(middleware.Logger)
 	r.Use(middleware.Recoverer)
+
+	r.Use(cors.Handler(cors.Options{
+		AllowedOrigins:   []string{"*"},
+		AllowedMethods:   []string{"GET", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+		ExposedHeaders:   []string{"Link"},
+		AllowCredentials: false,
+		MaxAge:           300, // Maximum value that is not ignored by any of major browsers
+	}))
 
 	// Set a timeout value on the request context (ctx), that will signal
 	// through ctx.Done() that the request has timed out and further

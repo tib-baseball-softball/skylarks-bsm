@@ -3,14 +3,14 @@ import type {LayoutLoad} from "./$types";
 import {env as publicEnv} from "$env/dynamic/public";
 import {preferences, RELAY_URL} from "$lib/tib/globals.svelte.ts";
 import {client} from "$lib/dp/client.svelte.ts";
-import {browser} from "$app/environment";
+import {browser, dev} from "$app/environment";
 import {loadLocale} from "wuchale/load-utils";
 import { locales } from "../locales/data";
 import {appLocale} from "$lib/dp/locale.svelte.ts";
 
 export const ssr = false;
 
-export const load: LayoutLoad = async ({fetch, depends}) => {
+export const load: LayoutLoad = async ({fetch}) => {
   const appPreferences = preferences.current;
 
   // Build URLs via bsm.js and relay them through PocketBase
@@ -51,6 +51,9 @@ export const load: LayoutLoad = async ({fetch, depends}) => {
       } else {
         locale = "en";
       }
+    }
+    if (dev) {
+      console.log(`detected locale: ${locale}`);
     }
     await loadLocale(locale);
   }

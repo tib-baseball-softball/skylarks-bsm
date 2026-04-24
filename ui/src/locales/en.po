@@ -695,17 +695,10 @@ msgstr "Main Info"
 msgid "Date"
 msgstr "Date"
 
+#: src/lib/dp/components/event/match/GameResultIndicator.svelte
 #: src/lib/tib/components/match/CurrentMatchRow.svelte
 msgid "PPD"
 msgstr "PPD"
-
-#: src/lib/tib/components/match/ShareButton.svelte
-msgid "Share game data using your browser"
-msgstr "Share game data using your browser"
-
-#: src/lib/tib/components/match/ShareButton.svelte
-msgid "Share Game <0/>"
-msgstr "Share Game <0/>"
 
 #: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
@@ -858,11 +851,13 @@ msgstr "HBP"
 msgid "WHIP"
 msgstr "WHIP"
 
+#: src/lib/dp/components/event/match/GameResultIndicator.svelte
 #: src/lib/tib/components/stats/StatsHeaderRow.svelte
 #: src/lib/tib/components/table/StandingsTable.svelte
 msgid "W"
 msgstr "W"
 
+#: src/lib/dp/components/event/match/GameResultIndicator.svelte
 #: src/lib/tib/components/stats/StatsHeaderRow.svelte
 #: src/lib/tib/components/table/StandingsTable.svelte
 msgid "L"
@@ -1232,10 +1227,10 @@ msgstr "No Game Report available."
 msgid "error loading Game Report: {0}"
 msgstr "error loading Game Report: {0}"
 
-#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
-msgid "Caveat"
-msgstr "Caveat"
+#: src/lib/dp/components/event/match/GameResultIndicator.svelte
+msgid "F"
+msgstr "F"
 
-#: src/routes/(frame)/(tib)/gamecenter/game-detail/[id]/+page.svelte
-msgid "Sharing games does not work on Firefox."
-msgstr "Sharing games does not work on Firefox."
+#: src/lib/dp/components/event/match/GameResultIndicator.svelte
+msgid "TBD"
+msgstr "TBD"

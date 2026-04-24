@@ -31,4 +31,4 @@ export const preferences = persistedState<AppPreferences>(
 );
 
 // only used to construct the URL for the relay, not used for directly fetching data
-export const RELAY_URL = `${env.PUBLIC_POCKETBASE_URL}/api/bsm/relay`;
+export const RELAY_URL = `${env.PUBLIC_BACKEND_URL ?? ""}/api/bsm/relay`;
