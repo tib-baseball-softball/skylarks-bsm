@@ -11,7 +11,9 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
+	"github.com/pocketbase/dbx"
 	"github.com/subosito/gotenv"
+	_ "modernc.org/sqlite"
 )
 
 // / Loads environment.
@@ -30,6 +32,17 @@ func init() {
 }
 
 func main() {
+    db, err := dbx.MustOpen("sqlite", "db.sqlite")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer db.Close()
+
+    err = initDB(db)
+    if err != nil {
+        log.Fatal(err)
+    }
+    
 	r := chi.NewRouter()
 
 	r.Use(middleware.RequestID)
@@ -63,9 +76,27 @@ func main() {
 	})
 
 	log.Println("server listening on port 8090")
-	err := http.ListenAndServe(":8090", r)
+	err = http.ListenAndServe(":8090", r)
 	if err != nil {
 		log.Fatalf("failed to start server: %v", err)
 		return
 	}
+}
+
+func initDB(db *dbx.DB) error {
+	if _, err := db.DB().Exec(`
+    CREATE TABLE IF NOT EXISTS requestcaches
+    (
+        id           TEXT PRIMARY KEY DEFAULT ('r' || lower(hex(randomblob(7)))) NOT NULL,
+        created      TEXT             DEFAULT (strftime('%Y-%m-%d %H:%M:%fZ'))   NOT NULL,
+        hash         TEXT             DEFAULT ''                                 NOT NULL,
+        responseBody JSON             DEFAULT NULL,
+        updated      TEXT             DEFAULT (strftime('%Y-%m-%d %H:%M:%fZ'))   NOT NULL,
+        url          TEXT             DEFAULT ''                                 NOT NULL,
+        identifier   TEXT             DEFAULT ''                                 NOT NULL
+    );
+    `); err != nil {
+		return err
+	}
+	return nil
 }
