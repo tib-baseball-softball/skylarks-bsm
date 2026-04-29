@@ -71,8 +71,10 @@ func main() {
 		}
 	})
 
+	bsmClient := bsm.NewAPIClient()
 	r.Route("/api/bsm/relay", func(r chi.Router) {
 		r.Get("/*", tib.GetRelayedBSMData)
+		r.Get("/top10/{league}", tib.GetLeagueLeaders(db, bsmClient))
 	})
 
 	log.Println("server listening on port 8090")
@@ -88,10 +90,9 @@ func initDB(db *dbx.DB) error {
     CREATE TABLE IF NOT EXISTS requestcaches
     (
         id           TEXT PRIMARY KEY DEFAULT ('r' || lower(hex(randomblob(7)))) NOT NULL,
-        created      TEXT             DEFAULT (strftime('%Y-%m-%d %H:%M:%fZ'))   NOT NULL,
         hash         TEXT             DEFAULT ''                                 NOT NULL,
         responseBody JSON             DEFAULT NULL,
-        updated      TEXT             DEFAULT (strftime('%Y-%m-%d %H:%M:%fZ'))   NOT NULL,
+        expires_at   TEXT             DEFAULT (strftime('%Y-%m-%d %H:%M:%fZ'))   NOT NULL,
         url          TEXT             DEFAULT ''                                 NOT NULL,
         identifier   TEXT             DEFAULT ''                                 NOT NULL
     );

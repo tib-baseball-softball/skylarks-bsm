@@ -226,3 +226,4 @@ ui/src/locales/.wuchale/
 /craft/data/*.db*
 /public/
 db.sqlite
+.junie
