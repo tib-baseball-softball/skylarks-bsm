@@ -73,7 +73,7 @@ func main() {
 
 	bsmClient := bsm.NewAPIClient()
 	r.Route("/api/bsm/relay", func(r chi.Router) {
-		r.Get("/*", tib.GetRelayedBSMData)
+		r.Get("/*", tib.GetRelayedBSMData(db))
 		r.Get("/top10/{league}", tib.GetLeagueLeaders(db, bsmClient))
 	})
 

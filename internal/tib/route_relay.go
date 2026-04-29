@@ -3,51 +3,41 @@ package tib
 import (
 	"encoding/json"
 	"errors"
-	"io"
 	"net/http"
 	"net/url"
 	"os"
 	"strings"
+
+	"github.com/pocketbase/dbx"
 )
 
 // GetRelayedBSMData relays BSM request so the client-side does not need to know API keys.
 // Uses allowlist for URLs to make sure only public information is disclosed.
-func GetRelayedBSMData(w http.ResponseWriter, r *http.Request) {
-	targetURL := rewriteURLForProxying(*r.URL)
+func GetRelayedBSMData(db *dbx.DB) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+		targetURL := rewriteURLForProxying(*r.URL)
 
-	if !isAllowedBSMURL(&targetURL) {
-		http.Error(w, "Only allowlisted BSM URLs are allowed", http.StatusForbidden)
-		return
+		if !isAllowedBSMURL(&targetURL) {
+			http.Error(w, "Only allowlisted BSM URLs are allowed", http.StatusForbidden)
+			return
+		}
+
+		resp, err := GetCachedBSMResponse(db, &targetURL)
+		if err != nil {
+			http.Error(w, "Failed to fetch from BSM", http.StatusInternalServerError)
+			return
+		}
+
+		stripped, err := stripResponseKeys(string(resp))
+		if err != nil {
+			http.Error(w, "Internal error occurred", http.StatusInternalServerError)
+			return
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		w.Write(stripped)
 	}
-
-	resp, err := http.Get(targetURL.String())
-	if err != nil {
-		http.Error(w, "Failed to fetch from BSM", http.StatusInternalServerError)
-		return
-	}
-	defer resp.Body.Close()
-
-	if resp.StatusCode != http.StatusOK {
-		w.WriteHeader(resp.StatusCode)
-		io.Copy(w, resp.Body)
-		return
-	}
-
-	body, err := io.ReadAll(resp.Body)
-	if err != nil {
-		http.Error(w, "Failed to read BSM response", http.StatusInternalServerError)
-		return
-	}
-
-	stripped, err := stripResponseKeys(string(body))
-	if err != nil {
-		http.Error(w, "Internal error occurred", http.StatusInternalServerError)
-		return
-	}
-
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write(stripped)
 }
 
 var keysToRemoveFromBSMResponse = []string{
