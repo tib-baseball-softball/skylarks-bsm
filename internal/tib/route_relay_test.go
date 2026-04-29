@@ -76,7 +76,7 @@ func TestStripResponseKeys_InvalidJSON_ReturnsError(t *testing.T) {
 	if err == nil {
 		t.Fatalf("expected error for invalid JSON, got nil")
 	}
-	if got != nil && len(got) > 0 {
+	if len(got) > 0 {
 		t.Errorf("expected no bytes returned on error, got %q", string(got))
 	}
 }
