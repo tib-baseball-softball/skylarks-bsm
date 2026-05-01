@@ -32,17 +32,17 @@ func init() {
 }
 
 func main() {
-    db, err := dbx.MustOpen("sqlite", "db.sqlite")
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer db.Close()
+	db, err := dbx.MustOpen("sqlite", "data/db.sqlite")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
 
-    err = initDB(db)
-    if err != nil {
-        log.Fatal(err)
-    }
-    
+	err = initDB(db)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	r := chi.NewRouter()
 
 	r.Use(middleware.RequestID)
