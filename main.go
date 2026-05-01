@@ -64,6 +64,8 @@ func main() {
 	// processing should be stopped.
 	r.Use(middleware.Timeout(60 * time.Second))
 
+	// ------------- Routes -----------------//
+
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		_, err := w.Write([]byte(bsm.TriplePlays + " are rather rare"))
 		if err != nil {
@@ -76,6 +78,9 @@ func main() {
 		r.Get("/*", tib.GetRelayedBSMData(db))
 		r.Get("/top10/{league}", tib.GetLeagueLeaders(db, bsmClient))
 	})
+
+	// ------------- Cron jobs -----------------//
+	go tib.RemoveOutdatedCaches(db)
 
 	log.Println("server listening on port 8090")
 	err = http.ListenAndServe(":8090", r)

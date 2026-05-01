@@ -16,7 +16,10 @@ import (
 	"github.com/pocketbase/dbx"
 )
 
-const cacheLifetimeMinutes = 90
+const (
+	cacheLifetimeMinutes = 90
+	TableRequestCaches   = "requestcaches"
+)
 
 var cacheURLAllowlist = []*regexp.Regexp{
 	regexp.MustCompile(`^https://bsm\.baseball-softball\.de/clubs/\d+/licenses\.json(?:\?.*)?$`),
@@ -128,7 +131,7 @@ func GetCachedBSMResponse(db *dbx.DB, url *url.URL) (string, error) {
 	hash := getMD5Hash(url.String())
 
 	var requestCache RequestCache
-	err := db.Select().From("requestcaches").Where(dbx.HashExp{"hash": hash}).One(&requestCache)
+	err := db.Select().From(TableRequestCaches).Where(dbx.HashExp{"hash": hash}).One(&requestCache)
 	if err != nil {
 		// no data or error - request has never been cached before
 		body, err := saveBSMResponseToCache(db, url.String())
@@ -140,7 +143,7 @@ func GetCachedBSMResponse(db *dbx.DB, url *url.URL) (string, error) {
 	}
 
 	if isOutdated(requestCache.ExpiresAt) {
-		_, err = db.Delete("requestcaches", dbx.HashExp{"hash": hash}).Execute()
+		_, err = db.Delete(TableRequestCaches, dbx.HashExp{"hash": hash}).Execute()
 		if err != nil {
 			return ret, err
 		}
@@ -182,7 +185,7 @@ func saveBSMResponseToCache(db *dbx.DB, bsmURL string) (string, error) {
 	hash := getMD5Hash(bsmURL)
 	expiresAt := time.Now().Add(cacheLifetimeMinutes * time.Minute).Format("2006-01-02 15:04:05Z")
 
-	_, err = db.Insert("requestcaches", dbx.Params{
+	_, err = db.Insert(TableRequestCaches, dbx.Params{
 		"hash":         hash,
 		"responseBody": body,
 		"url":          bsmURL,
