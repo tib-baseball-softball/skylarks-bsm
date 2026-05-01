@@ -16,7 +16,7 @@ import (
 	"github.com/pocketbase/dbx"
 )
 
-const cacheLifetimeMinutes = 1440
+const cacheLifetimeMinutes = 90
 
 var cacheURLAllowlist = []*regexp.Regexp{
 	regexp.MustCompile(`^https://bsm\.baseball-softball\.de/clubs/\d+/licenses\.json(?:\?.*)?$`),
@@ -160,7 +160,7 @@ func GetCachedBSMResponse(db *dbx.DB, url *url.URL) (string, error) {
 func saveBSMResponseToCache(db *dbx.DB, bsmURL string) (string, error) {
 	_, body, err := bsm.FetchResource[any](bsmURL)
 	if err != nil {
-	if _, ok := errors.AsType[*url.Error](err); ok {
+		if _, ok := errors.AsType[*url.Error](err); ok {
 			log.Printf("Fetch to BSM failed: %v, bsmURL: %s", err, bsmURL)
 			return "", err
 		}
