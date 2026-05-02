@@ -1,5 +1,5 @@
 services:
-  diamondplanner:
+  bsmrelay:
     restart: unless-stopped
     environment:
       BSM_API_URL: ${BSM_API_URL}
