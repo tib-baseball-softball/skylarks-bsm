@@ -22,7 +22,7 @@
   const matchDate = $derived(DateTimeUtility.parseDateFromBSMString(match.time));
 </script>
 
-<article class="card preset-tonal-primary root">
+<article class="card root">
   <header class="header">
     <h2 class="h4 title">Main Info</h2>
   </header>
@@ -48,7 +48,7 @@
   </div>
 
   <div class="info-grid">
-    <div class="card sub-item item preset-tonal-primary">
+    <div class="card item">
       <div class="item-header">
         <Calendar/>
         <p class="label">Date</p>
@@ -56,7 +56,7 @@
 
       <p>{DateTimeUtility.dateTimeFormatMedium(appLocale.current).format(matchDate)}</p>
     </div>
-    <div class="card sub-item item preset-tonal-primary">
+    <div class="card item">
       <div class="item-header">
         <ClipboardList/>
         <p class="label">Status</p>
@@ -69,7 +69,6 @@
 
 <style>
   .root {
-    border: 2px solid var(--color-primary-500);
     padding-inline: calc(var(--spacing) * 2);
   }
 
@@ -119,30 +118,30 @@
 
   .score {
     font-weight: 700;
-    font-size: var(--text-2xl);
+    font-size: var(--font-size-xlarge);
   }
 
   @media (min-width: 40rem) {
     .score {
-      font-size: var(--text-3xl);
+      font-size: var(--font-size-xlarge);
     }
   }
 
   @media (min-width: 64rem) {
     .score {
-      font-size: var(--text-4xl);
+      font-size: var(--font-size-xxlarge);
     }
   }
 
   @media (min-width: 80rem) {
     .score {
-      font-size: var(--text-5xl);
+      font-size: var(--font-size-xlarge);
     }
   }
 
   @media (min-width: 96rem) {
     .score {
-      font-size: var(--text-6xl);
+      font-size: var(--font-size-xlarge);
     }
   }
 
@@ -188,13 +187,10 @@
     padding: calc(var(--spacing) * 3);
   }
 
-  .sub-item {
-    border: 2px solid var(--color-primary-500);
-  }
-
   .item-header {
     display: flex;
     gap: calc(var(--spacing) * 2);
+    align-items: center;
   }
 
   .label {

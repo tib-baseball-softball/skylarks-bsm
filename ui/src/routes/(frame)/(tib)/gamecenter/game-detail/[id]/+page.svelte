@@ -56,7 +56,6 @@
           <MatchDetailLocationCard
             --location-padding="3"
             --location-spacing="0"
-            classes="preset-tonal-surface"
             field={match?.field}
           />
 

@@ -47,7 +47,6 @@
 
 <style>
   .root {
-    border: 1px solid var(--color-surface-500);
     padding: calc(var(--spacing) * 3);
   }
 

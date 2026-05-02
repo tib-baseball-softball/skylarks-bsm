@@ -1,3 +1,7 @@
 img {
   --shadow: none;
 }
+
+.card {
+  margin-bottom: 0;
+}

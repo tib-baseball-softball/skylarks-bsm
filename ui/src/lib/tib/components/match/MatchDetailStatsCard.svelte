@@ -9,7 +9,7 @@
   let {match}: Props = $props();
 </script>
 
-<div class="card preset-tonal-surface root">
+<div class="card root">
   <div class="row">
     <Tag/>
     <div>
@@ -52,7 +52,6 @@
 
 <style>
   .root {
-    border: 1px solid var(--color-surface-500);
     padding: calc(var(--spacing) * 3);
   }
 

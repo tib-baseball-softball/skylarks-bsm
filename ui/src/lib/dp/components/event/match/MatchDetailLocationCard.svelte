@@ -33,7 +33,7 @@
   );
 </script>
 
-<div class="location-card {classes}">
+<div class="location-card card {classes}">
   <div class="location-row">
     <LandPlot/>
     <div>
@@ -85,7 +85,6 @@
     display: flex;
     flex-direction: column;
     padding: calc(var(--spacing) * var(--location-padding));
-    border-radius: var(--radius-base);
     gap: calc(var(--spacing) * var(--location-spacing));
   }
 
@@ -100,17 +99,11 @@
     font-weight: 300;
   }
 
+  p {
+    margin-block: 0;
+  }
+
   .divider {
-    margin-block: calc(var(--spacing) * 2);
-    border: 0;
-    border-top: 1px solid var(--color-surface-200);
-
-    @media (prefers-color-scheme: dark) {
-      border-color: var(--color-surface-700);
-    }
-
-    &.hidden {
-      display: none;
-    }
+    margin-block: calc(var(--spacing) * 4);
   }
 </style>
