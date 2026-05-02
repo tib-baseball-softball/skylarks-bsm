@@ -23,7 +23,7 @@
   }
 
   .score {
-    font-size: var(--text-xl);
+    font-size: var(--font-size-large);
     font-weight: var(--font-weight-extrabold);
 
     &.subdued {

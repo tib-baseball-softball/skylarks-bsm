@@ -33,7 +33,7 @@
 
 <style>
   .root {
-    font-size: var(--text-lg);
+    font-size: var(--font-size-large);
     font-weight: var(--font-weight-semibold);
   }
 
@@ -48,12 +48,12 @@
 
     &.derby {
       color: light-dark(var(--color-primary-600), var(--color-primary-400));
-      font-size: var(--text-2xl);
+      font-size: var(--font-size-xlarge);
     }
 
     &.tbd,
     &.ppd {
-      font-size: var(--text-md);
+      font-size: var(--font-size-medium);
     }
   }
 </style>

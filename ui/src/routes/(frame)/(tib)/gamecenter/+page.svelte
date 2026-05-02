@@ -55,7 +55,7 @@
 
     <div class="header-container switch-container">
       <Switch
-        --switch-active-bg="light-dark(var(--color-surface-900), var(--color-tertiary-700))"
+        --switch-active-bg="light-dark(var(--color-primary), var(--color-tertiary-light))"
         bind:checked={showExternal}
         name="slide"
       />

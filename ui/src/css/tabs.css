@@ -9,8 +9,6 @@
     gap: calc(var(--spacing) * 3);
     grid-column: span 2 / span 2;
   }
-  background-color: var(--color-surface-50-950);
-  color: var(--color-surface-950-50);
 
   @media (width >= 64rem) {
     padding: calc(var(--spacing) * 2);
@@ -22,21 +20,18 @@
   display: inline-block;
   flex-grow: 1;
 
-  &:hover {
-    background-color: var(--color-primary-50-950);
-    color: var(--color-primary-950-50);
-  }
-
   font-size: calc(0.875rem * var(--text-scaling));
-  line-height: var(--tw-leading);
 
   @media (width >= 48rem) {
     font-size: calc(1rem * var(--text-scaling));
-    line-height: var(--tw-leading);
   }
 }
 
 .tabs-trigger[data-state="active"] {
-  background-color: var(--color-surface-950-50);
-  color: var(--color-surface-50-950);
+  --tab-color: light-dark(
+    oklch(from var(--color-primary-invert) calc(l + 0.5) c h),
+    oklch(from var(--color-primary-invert) calc(l - 0.5) c h)
+  );
+  background: var(--tab-color);
+  color: contrast-color(var(--tab-color));
 }

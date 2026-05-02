@@ -72,6 +72,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    color:inherit;
   }
 
   a:hover {
@@ -86,6 +87,9 @@
     align-items: center;
     padding-block: calc(var(--spacing) * 2);
     gap: calc(var(--spacing) * 2);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm);
 
     @media (min-width: 80rem) {
       gap: calc(var(--spacing) * 16);

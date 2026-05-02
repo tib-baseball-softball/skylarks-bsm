@@ -33,7 +33,7 @@
   <header class="card-header">
     <div class="header-container">
       <div>
-        <h3 class="league-name">{match.league?.name}</h3>
+        <h3 class="league-name h5">{match.league?.name}</h3>
         <p class="match-date">
           {DateTimeUtility.dateTimeFormatMedium(appLocale.current).format(matchDate)}
         </p>
@@ -61,18 +61,18 @@
 </a>
 
 <style>
+  a {
+    color: inherit;
+  }
+
   .root {
     display: block;
-    font-size: var(--text-sm);
-    border: 1px solid transparent;
+    font-size: var(--font-size-smallish);
+    border: 1px solid var(--color-border);
+  }
 
-    &.border-primary-500 {
-      border-color: var(--color-primary-500);
-    }
-
-    &.border-surface-500 {
-      border-color: var(--color-surface-500);
-    }
+  .card {
+    margin-bottom: 0;
   }
 
   .header-container {
