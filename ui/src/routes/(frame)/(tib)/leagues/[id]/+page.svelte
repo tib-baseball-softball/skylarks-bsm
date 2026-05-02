@@ -30,7 +30,7 @@
         </p>
 
         <footer class="card-footer">
-          <a class="btn preset-tonal-primary border border-primary-500" href="/ligen/{leagueGroup.id}/stats">Go to
+          <a class="btn preset-tonal-primary border border-primary-500" href="/leagues/{leagueGroup.id}/stats">Go to
             stats</a>
         </footer>
       </div>
@@ -58,28 +58,28 @@
   h2 {
     margin-bottom: calc(var(--spacing) * 3);
   }
-  
+
   .page-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: calc(var(--spacing) * 5);
-    
+
     @media (min-width: 32rem) {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-  
+
   .card-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: end;
-    
+
     > p {
       padding: calc(var(--spacing) * 4);
     }
   }
-  
+
   section {
     margin-block: calc(var(--spacing) * 6);
   }

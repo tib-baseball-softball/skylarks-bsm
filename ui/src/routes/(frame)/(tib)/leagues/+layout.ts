@@ -17,7 +17,7 @@ export const load: LayoutLoad = async ({ parent, url, fetch }) => {
     ]);
     leagueGroups = client.send<LeagueGroup[]>(lgURL.pathname + lgURL.search, {
       fetch,
-      requestKey: `ligen-layout-leagueGroups-${season}`,
+      requestKey: `leagues-layout-leagueGroups-${season}`,
     });
   }
 

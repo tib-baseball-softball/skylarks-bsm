@@ -18,7 +18,7 @@ export const load: PageLoad = async ({parent, params, fetch}) => {
     const lgURL = leagueGroupRequest.buildRequestURL(`league_groups/${params.id}.json`, []);
     leagueGroup = await client.send<LeagueGroup>(lgURL.pathname + lgURL.search, {
       fetch,
-      requestKey: `ligen-id-leagueGroup-${params.id}`,
+      requestKey: `leagues-id-leagueGroup-${params.id}`,
     });
   }
 
@@ -31,7 +31,7 @@ export const load: PageLoad = async ({parent, params, fetch}) => {
   const tableURL = tablesRequest.buildRequestURL(`league_groups/${params.id}/table.json`, []);
   const table = client.send<Table>(tableURL.pathname + tableURL.search, {
     fetch,
-    requestKey: `ligen-id-table-${params.id}`,
+    requestKey: `leagues-id-table-${params.id}`,
   });
 
   return {

@@ -33,7 +33,7 @@
   <ul class="leagues-list">
     {#each leagueGroups as leagueGroup}
       <li class="league-item card">
-        <a href="/ligen/{leagueGroup.id}">
+        <a href="/leagues/{leagueGroup.id}">
           <code class="badge league-badge">{leagueGroup.acronym}</code>
           <span class="league-name">{leagueGroup.name}</span>
         </a>

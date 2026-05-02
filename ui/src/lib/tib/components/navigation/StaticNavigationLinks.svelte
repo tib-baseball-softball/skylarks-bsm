@@ -36,8 +36,8 @@
   <li>
     <a
       class={classes}
-      class:preset-filled-primary-500={page.url.pathname.startsWith("/ligen")}
-      href="/ligen"
+      class:preset-filled-primary-500={page.url.pathname.startsWith("/leagues")}
+      href="/leagues"
     >
       <Table/>
       <span>Leagues</span>
