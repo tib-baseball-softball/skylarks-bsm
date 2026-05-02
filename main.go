@@ -11,6 +11,7 @@ import (
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
+	"github.com/go-chi/httprate"
 	"github.com/pocketbase/dbx"
 	"github.com/subosito/gotenv"
 	_ "modernc.org/sqlite"
@@ -53,6 +54,8 @@ func main() {
 	r.Use(middleware.RequestID)
 	r.Use(middleware.RealIP)
 	r.Use(middleware.Logger)
+	r.Use(middleware.Heartbeat("/health"))
+	r.Use(httprate.LimitByIP(300, time.Minute))
 	r.Use(middleware.Recoverer)
 
 	r.Use(cors.Handler(cors.Options{
