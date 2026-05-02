@@ -108,8 +108,10 @@ msgstr "Ładowanie meczów..."
 #. 0: error.message
 #. 0: error.message
 #. 0: error.message
+#. 0: error.message
 #: src/lib/tib/components/match/CurrentMatchBlock.svelte
 #: src/routes/(frame)/(tib)/gamecenter/+page.svelte
+#: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "error loading matches: {0}"
 msgstr "błąd ładowania meczów: {0}"
@@ -193,14 +195,18 @@ msgid "Error: {0}"
 msgstr "Błąd: {0}"
 
 #: src/lib/tib/components/navigation/StaticNavigationLinks.svelte
+#: src/routes/(frame)/(tib)/leagues/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/+page.svelte
 msgid "Leagues"
 msgstr "Ligi"
 
+#: src/routes/(frame)/(tib)/leagues/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/+page.svelte
 msgid "Loading Leagues..."
 msgstr "Ładowanie lig..."
 
+#. 0: error.message
+#. 0: error.message
 #. 0: error.message
 #. 0: error.message
 #. 0: error.message
@@ -218,6 +224,8 @@ msgstr "Ładowanie lig..."
 #: src/routes/(frame)/(tib)/club/scorer/+page.svelte
 #: src/routes/(frame)/(tib)/club/umpire/+page.svelte
 #: src/routes/(frame)/(tib)/league_entries/[entry]/+page.svelte
+#: src/routes/(frame)/(tib)/leagues/+page.svelte
+#: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/players/[id]/+page.svelte
@@ -459,6 +467,7 @@ msgstr "Ofensywa"
 
 #: src/lib/tib/components/boxscore/MatchBoxscoreSection.svelte
 #: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
+#: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "Pitching"
 msgstr "Rzucanie"
@@ -701,11 +710,13 @@ msgid "PPD"
 msgstr "PRZEŁ"
 
 #: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
+#: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "Batting"
 msgstr "Bicie"
 
 #: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
+#: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "Fielding"
 msgstr "Gra w polu"
@@ -1014,23 +1025,28 @@ msgstr "Ładowanie informacji o działaczach klubu..."
 msgid "Umpire Licenses"
 msgstr "Licencje Sędziowskie"
 
+#: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
 msgid "Information"
 msgstr "Informacje"
 
+#: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 msgid "League Stats"
 msgstr "Statystyki Ligi"
 
+#: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 msgid "Statistics about current league leaders in various statistical categories can be found on a dedicated subpage."
 msgstr "Statystyki dotyczące aktualnych liderów ligi w różnych kategoriach statystycznych można znaleźć na dedykowanej podstronie."
 
+#: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 msgid "Go to stats"
 msgstr "Przejdź do statystyk"
 
+#: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 msgid "Tabelle"
 msgstr "Tabela"
@@ -1188,6 +1204,8 @@ msgid "Official Details"
 msgstr "Szczegóły oficjela"
 
 #. 0: data.leagueGroup.name; 1: data.leagueGroup.season
+#. 0: data.leagueGroup.name; 1: data.leagueGroup.season
+#: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
 #: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "Leaderboards for {0} ({1})"
 msgstr "Tabele liderów dla {0} ({1})"
@@ -1233,4 +1251,24 @@ msgstr ""
 
 #: src/lib/dp/components/event/match/GameResultIndicator.svelte
 msgid "TBD"
+msgstr ""
+
+#: src/lib/dp/components/datatable/RowCount.svelte
+msgid "No Elements found."
+msgstr ""
+
+#: src/lib/dp/components/datatable/Search.svelte
+msgid "Search..."
+msgstr ""
+
+#: src/lib/dp/components/datatable/RowsPerPage.svelte
+msgid "Show <0/>"
+msgstr ""
+
+#: src/lib/dp/components/modal/sheet/sheet-content.svelte
+msgid "Close"
+msgstr ""
+
+#: src/lib/tib/components/navigation/StaticNavigationLinks.svelte
+msgid "Home"
 msgstr ""
