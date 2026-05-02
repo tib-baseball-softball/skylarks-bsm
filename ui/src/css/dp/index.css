@@ -22,5 +22,4 @@
 @import "./theme/typography.css";
 @import "./theme/generic-theme.css";
 @import "./theme/animations.css";
-@import "./theme/properties.css";
 @import "./utility/tw_utils.css";
