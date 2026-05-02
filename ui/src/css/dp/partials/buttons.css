@@ -1,9 +1,0 @@
-/**
- * Fix for tab elements
- */
-
-button[data-scope="tabs"] {
-  & .btn {
-    white-space: wrap;
-  }
-}

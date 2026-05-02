@@ -56,18 +56,6 @@
     }
   }
 
-  :global(.top-nav-link) {
-    gap: calc(var(--spacing) * 2);
-    padding-block: calc(var(--spacing) * 1);
-    padding-inline: calc(var(--spacing) * 2);
-  }
-
-  :global(.bottom-nav-link) {
-    flex-direction: column;
-    padding-block: calc(var(--spacing) * 1.5);
-    font-size: var(--text-sm);
-  }
-
   .shame-div {
     display: none;
 
