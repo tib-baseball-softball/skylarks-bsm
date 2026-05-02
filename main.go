@@ -1,9 +1,15 @@
 package main
 
 import (
+	"embed"
+	"errors"
+	"fmt"
+	"io/fs"
 	"log"
 	"net/http"
 	"os"
+	"path"
+	"strings"
 	"time"
 
 	"git.berlinskylarks.de/skylarks-bsm/internal/tib"
@@ -16,6 +22,9 @@ import (
 	"github.com/subosito/gotenv"
 	_ "modernc.org/sqlite"
 )
+
+//go:embed public/*
+var spaFiles embed.FS
 
 // / Loads environment.
 //   - Locally: from .env file
@@ -74,12 +83,7 @@ func main() {
 
 	// ------------- Routes -----------------//
 
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		_, err := w.Write([]byte(bsm.TriplePlays + " are rather rare"))
-		if err != nil {
-			return
-		}
-	})
+	r.Handle("/*", SPAHandler())
 
 	bsmClient := bsm.NewAPIClient()
 	r.Route("/api/bsm/relay", func(r chi.Router) {
@@ -129,4 +133,21 @@ func DefaultDBConnect(dbPath string) (*dbx.DB, error) {
 	}
 
 	return db, nil
+}
+
+func SPAHandler() http.HandlerFunc {
+	spaFS, err := fs.Sub(spaFiles, "public")
+	if err != nil {
+		panic(fmt.Errorf("failed getting the sub tree for the site files: %w", err))
+	}
+	return func(w http.ResponseWriter, r *http.Request) {
+		f, err := spaFS.Open(strings.TrimPrefix(path.Clean(r.URL.Path), "/"))
+		if err == nil {
+			defer f.Close()
+		}
+		if errors.Is(err, fs.ErrNotExist) {
+			r.URL.Path = "/"
+		}
+		http.FileServer(http.FS(spaFS)).ServeHTTP(w, r)
+	}
 }
