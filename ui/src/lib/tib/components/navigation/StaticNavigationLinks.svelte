@@ -98,5 +98,6 @@
 
   li {
     width: 20%;
+    margin-block: calc(var(--spacing) * 2);
   }
 </style>

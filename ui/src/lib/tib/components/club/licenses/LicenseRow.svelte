@@ -20,4 +20,8 @@
     align-items: center;
     gap: 1rem;
   }
+
+  a {
+    color: inherit;
+  }
 </style>

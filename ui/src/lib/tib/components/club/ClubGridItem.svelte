@@ -41,4 +41,8 @@
   .item-description {
     font-weight: 300;
   }
+
+  a {
+    color: inherit;
+  }
 </style>

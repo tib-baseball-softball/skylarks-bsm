@@ -52,4 +52,8 @@
   hr {
     margin-block: calc(var(--spacing) * 2);
   }
+
+  a {
+    color: inherit;
+  }
 </style>
