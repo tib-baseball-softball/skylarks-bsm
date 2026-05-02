@@ -96,6 +96,10 @@
   }
 
   hr {
-    margin-block: calc(var(--spacing) * 2);
+    margin-block: calc(var(--spacing) * 3);
+  }
+
+  p {
+    margin-block: 0;
   }
 </style>

@@ -73,8 +73,8 @@
     <RowsPerPage {handler}/>
   </header>
 
-  <div class="flex flex-col">
-    <div class="stats preset-tonal-surface rounded-container">
+  <div>
+    <div class="stats rounded-container">
       {#if summaryData}
         <StatsBlock row={summaryData} {type}/>
       {/if}
@@ -127,8 +127,4 @@
     justify-content: space-between;
   }
 
-  .tabs-wrapper {
-    border: 1px solid var(--color-primary-500);
-    border-radius: var(--radius-container);
-  }
 </style>

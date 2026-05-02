@@ -22,7 +22,7 @@
 
 {#snippet rowContent()}
   {#if visual === "number"}
-    <PlayerNumberGraphic content={player.number} classes="preset-filled-primary-500"/>
+    <PlayerNumberGraphic content={player.number}/>
   {:else }
 
     {#if player.media?.length > 0}
@@ -60,5 +60,10 @@
     font-size: var(--text-sm);
     line-height: var(--tw-leading, var(--text-sm--line-height));
     font-weight: var(--font-weight-light);
+    margin-block: 0;
+  }
+
+  a {
+    color: inherit;
   }
 </style>

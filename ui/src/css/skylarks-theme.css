@@ -1,5 +1,6 @@
 @import "reset.css";
 @import "tabs.css";
+@import "stats.css";
 
 @layer base {
   :root,

@@ -18,11 +18,9 @@
   const {data}: PageProps = $props();
 </script>
 
-<div class="my-2 md:flex justify-between items-center">
-  <h1 class="h1 mb-3">Teams</h1>
-  <div>
-    <SeasonSelector/>
-  </div>
+<h1 class="h1 mb-3">Teams</h1>
+<div>
+  <SeasonSelector/>
 </div>
 
 <ReloadUponPreferenceChange callback={reload}/>
@@ -34,10 +32,10 @@
 {:then clubTeams}
   <ul class="teams-list">
     {#each clubTeams ?? [] as clubTeam}
-      <li class="team-item">
+      <li class="team-item card">
         <a href="/teams/{clubTeam.id}?season={preferences.current.selectedSeason}">
-          <span
-            class="badge team-badge">{clubTeam?.league_entries.at(0)?.league?.acronym}</span>
+          <code
+            class="badge team-badge">{clubTeam?.league_entries.at(0)?.league?.acronym}</code>
           <span class="team-name">{clubTeam?.name}</span>
         </a>
       </li>
@@ -57,15 +55,8 @@
   }
 
   .team-item {
-    background-color: var(--color-surface-50-950);
     padding: calc(var(--spacing) * 3);
     min-height: 3.5rem;
-    border-radius: var(--radius-base);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-surface-300-700);
-      color: var(--color-surface-contrast-300-700);
-    }
   }
 
   .team-badge {
@@ -78,5 +69,13 @@
   .team-name {
     flex: 1 1 auto;
     margin-inline-start: calc(var(--spacing) * 3);
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  a {
+    color: inherit;
   }
 </style>

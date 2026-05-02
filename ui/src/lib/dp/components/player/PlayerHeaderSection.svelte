@@ -43,5 +43,10 @@
   .graphic-wrapper {
     gap: calc(var(--spacing) * 4);
     margin-block-start: calc(var(--spacing) * 3);
+    align-items: center;
+
+    p {
+      margin-block: 0;
+    }
   }
 </style>

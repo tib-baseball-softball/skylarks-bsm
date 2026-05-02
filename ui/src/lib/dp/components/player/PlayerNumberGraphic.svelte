@@ -1,13 +1,12 @@
 <script lang="ts">
   interface Props {
     content: string;
-    classes?: string;
   }
 
-  let {content, classes = "preset-filled-primary-500"}: Props = $props();
+  let {content}: Props = $props();
 </script>
 
-<span class="root {classes}">
+<span class="root">
     {content}
 </span>
 
@@ -23,5 +22,6 @@
     color: white;
     font-weight: bold;
     scale: 75%;
+    background: var(--color-primary);
   }
 </style>
