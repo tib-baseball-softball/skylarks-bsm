@@ -1,7 +1,7 @@
 {
-  "short_name": "Skylarks",
-  "name": "Berlin Skylarks",
-  "description": "Web App for the Berlin Skylarks Baseball & Softball Club",
+  "short_name": "Skylarks BSM",
+  "name": "Berlin Skylarks BSM Data Visualizer",
+  "description": "Show game and league data for the Berlin Skylarks Baseball & Softball Club",
   "start_url": "/",
   "display": "standalone",
   "prefer_related_applications": false,
