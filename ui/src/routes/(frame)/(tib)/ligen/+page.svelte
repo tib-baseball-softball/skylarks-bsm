@@ -32,9 +32,9 @@
 
   <ul class="leagues-list">
     {#each leagueGroups as leagueGroup}
-      <li class="league-item">
+      <li class="league-item card">
         <a href="/ligen/{leagueGroup.id}">
-          <span class="badge league-badge">{leagueGroup.acronym}</span>
+          <code class="badge league-badge">{leagueGroup.acronym}</code>
           <span class="league-name">{leagueGroup.name}</span>
         </a>
       </li>
@@ -54,35 +54,32 @@
   }
 
   .league-item {
-    background-color: var(--color-surface-50-950);
     padding: calc(var(--spacing) * 3);
     min-height: 3.5rem;
     border-radius: var(--radius-base);
-
-    @media (prefers-color-scheme: dark) {
-      background-color: var(--color-surface-300-700);
-      color: var(--color-surface-contrast-300-700);
-    }
   }
 
   .league-badge {
     width: 5rem;
-    background-color: var(--color-primary-50-950);
-    color: var(--color-primary-950-50);
     border: 1px solid var(--color-primary-500);
+    background: inherit;
   }
 
   .league-name {
     flex: 1 1 auto;
     margin-inline-start: calc(var(--spacing) * 3);
   }
-  
+
   .header-container {
     justify-content: space-between;
     align-items: center;
-    
+
     @media (min-width: 32rem) {
       display: flex;
     }
+  }
+
+  a {
+    color: inherit;
   }
 </style>
