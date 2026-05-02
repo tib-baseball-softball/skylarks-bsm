@@ -46,11 +46,8 @@ const config = {
         ],
         "script-src": ["self"],
         "script-src-elem": ["self"],
-        "style-src": ["self", "unsafe-inline"],
-        "frame-ancestors": ["none"],
-        "frame-src": [
-          "*"
-        ]
+        "style-src": ["self"],
+        "frame-src": ["none"]
       },
     },
   },
