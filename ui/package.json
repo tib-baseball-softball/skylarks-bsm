@@ -26,6 +26,7 @@
     "@types/node": "24.10.1",
     "@vincjo/datatables": "^2.8.0",
     "@wuchale/svelte": "^0.19.3",
+    "berlin-skylarks-theme": "^1.0.0",
     "bits-ui": "^2.17.3",
     "bsm.js": "^0.4.0",
     "chart.js": "^4.5.1",

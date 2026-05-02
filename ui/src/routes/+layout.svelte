@@ -1,6 +1,6 @@
 <script lang="ts">
-  import "../css/dp/app.css"; // MARK: load diamond planner base styles
-  import "../css/skylarks-theme.css"; // ...and apply our custom theme (also requires setting the correct data attribute in app.html)
+  import "berlin-skylarks-theme/theme.css"
+  import "../css/skylarks-theme.css";
   import type { LayoutProps } from "./$types";
 
   const { children }: LayoutProps = $props();
