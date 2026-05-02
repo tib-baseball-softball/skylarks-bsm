@@ -16,10 +16,10 @@ RUN pnpm $BUILD_MODE
 
 
 # 2) Go build stage
-FROM golang:1.26-alpine AS go-builder
+FROM golang:1.26.2-alpine AS go-builder
 WORKDIR /app
 
-COPY --from=ui-builder public .
+COPY --from=ui-builder /app/public ./
 COPY go.mod go.sum ./
 RUN go mod download
 
