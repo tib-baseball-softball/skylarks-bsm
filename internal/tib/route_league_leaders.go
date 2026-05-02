@@ -38,6 +38,10 @@ func GetLeagueLeaders(db *dbx.DB, client bsm.APIClient) http.HandlerFunc {
 
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
-		json.NewEncoder(w).Encode(leagueLeaderboard)
+		err = json.NewEncoder(w).Encode(leagueLeaderboard)
+		if err != nil {
+			http.Error(w, "internal error occurred", http.StatusInternalServerError)
+			return
+		}
 	}
 }

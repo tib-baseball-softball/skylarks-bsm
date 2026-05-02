@@ -4,13 +4,13 @@ import {env} from "$env/dynamic/public";
 type SendOptions = RequestInit & {
   fetch?: typeof globalThis.fetch;
   requestKey?: string;
-  params?: Record<string, any>;
+  params?: Record<string, string>;
 };
 
 class APIClient {
   constructor(private readonly baseURL?: string) {}
 
-  private getTargetURL(path: string, params?: Record<string, any>): string {
+  private getTargetURL(path: string, params?: Record<string, string>): string {
     let url: URL;
     if (path.startsWith("http://") || path.startsWith("https://")) {
       url = new URL(path);

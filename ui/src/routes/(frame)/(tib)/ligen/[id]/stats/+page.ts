@@ -29,7 +29,7 @@ export const load: PageLoad = async ({parent, params, url, fetch}) => {
 
   const leaderboardData = client.send<LeaderboardSummary>(`/api/bsm/relay/top10/${leagueGroup.id}`, {
     fetch: fetch,
-    query: {
+    params: {
       statsType: statsType,
     },
     requestKey: `leagueGroupStatsRoute-top10-${params.id}-${statsType}`,
