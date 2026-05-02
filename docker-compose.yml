@@ -1,0 +1,27 @@
+services:
+  diamondplanner:
+    restart: unless-stopped
+    environment:
+      BSM_API_URL: ${BSM_API_URL}
+      BSM_API_HOST: ${BSM_API_HOST}
+      BSM_API_KEY: ${BSM_API_KEY}
+      APPLICATION_CONTEXT: ${APPLICATION_CONTEXT}
+      TIME_ZONE: ${TIME_ZONE}
+    image: obnoxieux/skylarks-bsm:latest
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.skylarks-bsm.rule=Host(`bsm.berlinskylarks.de`)"
+      - "traefik.http.routers.skylarks-bsm.entrypoints=websecure"
+      - "traefik.http.routers.skylarks-bsm.tls.certresolver=letsEncrypt"
+      - "traefik.docker.network=proxy"
+    networks:
+      - proxy
+    volumes:
+      - bsm_relay_data:/app/data
+
+networks:
+  proxy:
+    external: true
+
+volumes:
+  bsm_relay_data:
