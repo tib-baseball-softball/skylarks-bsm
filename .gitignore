@@ -225,5 +225,5 @@ ui/src/locales/*.compiled.main.svelte.js
 ui/src/locales/.wuchale/
 /craft/data/*.db*
 /public/
-data/db.sqlite
+data/db.sqlite*
 .junie

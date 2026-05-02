@@ -28,7 +28,7 @@ func GetRelayedBSMData(db *dbx.DB) http.HandlerFunc {
 			return
 		}
 
-		stripped, err := stripResponseKeys(string(resp))
+		stripped, err := stripResponseKeys(resp)
 		if err != nil {
 			http.Error(w, "Internal error occurred", http.StatusInternalServerError)
 			return
@@ -36,7 +36,11 @@ func GetRelayedBSMData(db *dbx.DB) http.HandlerFunc {
 
 		w.Header().Set("Content-Type", "application/json")
 		w.WriteHeader(http.StatusOK)
-		w.Write(stripped)
+		_, err = w.Write(stripped)
+		if err != nil {
+			http.Error(w, "Failed to write response", http.StatusInternalServerError)
+			return
+		}
 	}
 }
 
