@@ -71,16 +71,6 @@
 </div>
 
 <style>
-  .overview-card {
-    background-color: var(--color-surface-50-950);
-    color: var(--color-surface-950-50);
-    border: 1px solid var(--color-surface-500);
-
-    @media (prefers-color-scheme: dark) {
-      border: 1px solid var(--color-tertiary-600-400);
-    }
-  }
-
   .card-body {
     padding: calc(var(--spacing) * 4);
   }
@@ -91,10 +81,6 @@
     @media (min-width: 64rem) {
       display: inline;
     }
-  }
-
-  :global(.current-matches .tabs-list) {
-    border: 1px var(--tw-border-style);
   }
 
   :global(.current-matches .tabs-content) {
