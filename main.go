@@ -64,7 +64,7 @@ func main() {
 	r.Use(middleware.RealIP)
 	r.Use(middleware.Logger)
 	r.Use(middleware.Heartbeat("/health"))
-	r.Use(httprate.LimitByIP(300, time.Minute))
+	r.Use(httprate.LimitByIP(300, time.Second))
 	r.Use(middleware.Recoverer)
 
 	r.Use(cors.Handler(cors.Options{
