@@ -26,7 +26,11 @@
   }: Props = $props();
 
   const googleMapsLink = $derived(
-    MapUtility.buildGoogleMapsURL(field.address_addon, field.latitude, field.longitude)
+    MapUtility.buildGoogleMapsURL(field.address_addon, field.latitude, field.longitude, {
+      street: field.street,
+      postalCode: field.postal_code,
+      city: field.city,
+    })
   );
   const appleMapsLink = $derived(
     MapUtility.buildAppleMapsURL(field.address_addon, field.latitude, field.longitude)
@@ -71,13 +75,15 @@
     >
   </div>
 
-  <hr class="divider" class:hidden={!showDividers}/>
+  {#if field.latitude && field.longitude}
+    <hr class="divider" class:hidden={!showDividers}/>
 
-  <div class="location-row link-row">
-    <Link/>
-    <a class="anchor" href={appleMapsLink} target="_blank">Open in Apple Maps</a
-    >
-  </div>
+    <div class="location-row link-row">
+      <Link/>
+      <a class="anchor" href={appleMapsLink} target="_blank">Open in Apple Maps</a
+      >
+    </div>
+  {/if}
 </div>
 
 <style>
