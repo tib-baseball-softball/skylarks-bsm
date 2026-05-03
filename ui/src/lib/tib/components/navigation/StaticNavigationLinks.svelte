@@ -90,6 +90,7 @@
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-sm);
+    padding-left: 0;
 
     @media (min-width: 80rem) {
       gap: calc(var(--spacing) * 16);
