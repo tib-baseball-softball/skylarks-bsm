@@ -2,6 +2,7 @@
   import "berlin-skylarks-theme/theme.css"
   import "../css/skylarks-theme.css";
   import type { LayoutProps } from "./$types";
+  import StaticNavigationLinks from "$lib/tib/components/navigation/StaticNavigationLinks.svelte";
 
   const { children }: LayoutProps = $props();
 </script>
@@ -19,6 +20,7 @@
     <!-- Main -->
 
     <main>
+      <StaticNavigationLinks classes="top-nav-link rounded-base" />
       {@render children?.()}
     </main>
   </div>
