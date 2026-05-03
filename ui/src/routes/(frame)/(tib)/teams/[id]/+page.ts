@@ -110,7 +110,13 @@ export const load: PageLoad = async ({parent, params, url, fetch}) => {
     if (dev) {
       console.log("Fetching team for league group", leagueGroup.id);
     }
-    const teamResponse = await teamClient.fetchTeamByFilter({league: String(leagueGroup.id)});
+
+    let teamResponse: TiBTeam[] | undefined;
+    try {
+      teamResponse = await teamClient.fetchTeamByFilter({league: String(leagueGroup.id)});
+    } catch (error) {
+      console.error("Error fetching team for league group", leagueGroup.id, error);
+    }
 
     if (Array.isArray(teamResponse) && teamResponse.length > 0) {
       team = teamResponse.at(0);
