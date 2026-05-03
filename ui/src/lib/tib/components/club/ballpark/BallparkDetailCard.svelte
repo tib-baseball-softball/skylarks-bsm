@@ -11,7 +11,11 @@
   const {field}: Props = $props();
 
   const mapsLink = $derived(
-    MapUtility.buildGoogleMapsURL(field?.name, field?.latitude, field?.longitude)
+    MapUtility.buildGoogleMapsURL(field?.name, field?.latitude, field?.longitude, {
+      street: field.street,
+      postalCode: field.postal_code,
+      city: field.city,
+    })
   );
 </script>
 

@@ -15,8 +15,7 @@ export class MapUtility {
       params = new URLSearchParams({
         api: "1",
         map_action: "map",
-        query_place_id: placeLine,
-        query: `${latitude}, ${longitude}`,
+        query: `${placeLine},${latitude}, ${longitude}`,
       })
     } else {
       params = new URLSearchParams({
