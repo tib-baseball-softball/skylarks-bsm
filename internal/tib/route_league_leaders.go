@@ -6,6 +6,7 @@ import (
 	"strconv"
 
 	"git.berlinskylarks.de/tib-baseball/bsm-go"
+	"github.com/getsentry/sentry-go"
 	"github.com/go-chi/chi/v5"
 	"github.com/pocketbase/dbx"
 )
@@ -19,6 +20,15 @@ func GetLeagueLeaders(db *dbx.DB, client bsm.APIClient) http.HandlerFunc {
 			http.Error(w, "league ID missing", http.StatusBadRequest)
 			return
 		}
+
+		ctx := r.Context()
+		hub := sentry.GetHubFromContext(ctx)
+		if hub != nil {
+			hub.Scope().SetContext("leagueID", sentry.Context{
+				"leagueID": leagueID,
+			})
+		}
+
 		result, err := strconv.Atoi(leagueID)
 		if err != nil || result == 0 {
 			http.Error(w, "league ID must be an integer", http.StatusBadRequest)
@@ -32,6 +42,10 @@ func GetLeagueLeaders(db *dbx.DB, client bsm.APIClient) http.HandlerFunc {
 
 		leagueLeaderboard, err := GetLeagueTop10Data(db, client, leagueID, statsType)
 		if err != nil {
+			if hub != nil {
+				hub.Scope().SetLevel(sentry.LevelError)
+				hub.CaptureException(err)
+			}
 			http.Error(w, "could not get league leaderboard", http.StatusInternalServerError)
 			return
 		}
@@ -40,6 +54,10 @@ func GetLeagueLeaders(db *dbx.DB, client bsm.APIClient) http.HandlerFunc {
 		w.WriteHeader(http.StatusOK)
 		err = json.NewEncoder(w).Encode(leagueLeaderboard)
 		if err != nil {
+			if hub != nil {
+				hub.Scope().SetLevel(sentry.LevelError)
+				hub.CaptureException(err)
+			}
 			http.Error(w, "internal error occurred", http.StatusInternalServerError)
 			return
 		}

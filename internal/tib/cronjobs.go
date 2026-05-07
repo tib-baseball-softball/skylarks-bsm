@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/getsentry/sentry-go"
 	"github.com/pocketbase/dbx"
 )
 
@@ -26,12 +27,14 @@ func RemoveOutdatedCaches(db *dbx.DB) {
 			dbx.NewExp("expires_at < {:now}", dbx.Params{"now": time.Now().Format("2006-01-02 15:04:05Z")}),
 		).Execute()
 		if err != nil {
+			sentry.CaptureException(err)
 			fmt.Println("Error executing cleanup task:", err)
 			break
 		}
 
 		affected, err := result.RowsAffected()
 		if err != nil {
+			sentry.CaptureException(err)
 			fmt.Println("Error retrieving affected rows:", err)
 			break
 		}

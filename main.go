@@ -49,8 +49,8 @@ func init() {
 }
 
 func main() {
-    env := os.Getenv("APPLICATION_CONTEXT")
-	isDevelopment := env == ContextDevelopment
+    applicationContext := os.Getenv("APPLICATION_CONTEXT")
+	isDevelopment := applicationContext == ContextDevelopment
 
 	db, err := DefaultDBConnect("data/db.sqlite")
 	if err != nil {
@@ -73,7 +73,7 @@ func main() {
 		Debug:          isDevelopment,
 		SendDefaultPII: false,
 		DisableClientReports: true,
-		Environment: env,
+		Environment: applicationContext,
 	})
 	if err != nil {
 		log.Fatalf("sentry.Init: %s", err)
