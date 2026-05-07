@@ -14,6 +14,8 @@ import (
 
 	"git.berlinskylarks.de/skylarks-bsm/internal/tib"
 	"git.berlinskylarks.de/tib-baseball/bsm-go"
+	"github.com/getsentry/sentry-go"
+	sentryhttp "github.com/getsentry/sentry-go/http"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
@@ -21,6 +23,11 @@ import (
 	"github.com/pocketbase/dbx"
 	"github.com/subosito/gotenv"
 	_ "modernc.org/sqlite"
+)
+
+const (
+    ContextDevelopment = "development"
+    ContextProduction  = "production"
 )
 
 //go:embed public/*
@@ -42,6 +49,9 @@ func init() {
 }
 
 func main() {
+    env := os.Getenv("APPLICATION_CONTEXT")
+	isDevelopment := env == ContextDevelopment
+
 	db, err := DefaultDBConnect("data/db.sqlite")
 	if err != nil {
 		log.Fatal(err)
@@ -58,6 +68,22 @@ func main() {
 		log.Fatal(err)
 	}
 
+	err = sentry.Init(sentry.ClientOptions{
+		Dsn:            "", // provided via environment
+		Debug:          isDevelopment,
+		SendDefaultPII: false,
+		DisableClientReports: true,
+		Environment: env,
+	})
+	if err != nil {
+		log.Fatalf("sentry.Init: %s", err)
+	}
+	defer sentry.Flush(2 * time.Second)
+
+	sentryMiddleware := sentryhttp.New(sentryhttp.Options{
+		Repanic: true,
+	})
+
 	r := chi.NewRouter()
 
 	r.Use(middleware.RequestID)
@@ -66,6 +92,7 @@ func main() {
 	r.Use(middleware.Heartbeat("/health"))
 	r.Use(httprate.LimitByIP(300, time.Second))
 	r.Use(middleware.Recoverer)
+	r.Use(sentryMiddleware.Handle)
 
 	r.Use(cors.Handler(cors.Options{
 		AllowedOrigins:   []string{"*"},

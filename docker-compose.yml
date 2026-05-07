@@ -7,6 +7,7 @@ services:
       BSM_API_KEY: ${BSM_API_KEY}
       APPLICATION_CONTEXT: ${APPLICATION_CONTEXT}
       TIME_ZONE: ${TIME_ZONE}
+      SENTRY_DSN: ${SENTRY_DSN}
     image: obnoxieux/skylarks-bsm:latest
     labels:
       - "traefik.enable=true"

@@ -8,6 +8,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/getsentry/sentry-go"
 	"github.com/pocketbase/dbx"
 )
 
@@ -15,21 +16,41 @@ import (
 // Uses allowlist for URLs to make sure only public information is disclosed.
 func GetRelayedBSMData(db *dbx.DB) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		ctx := r.Context()
+		hub := sentry.GetHubFromContext(ctx)
+
 		targetURL := rewriteURLForProxying(*r.URL)
+		if hub != nil {
+			hub.Scope().SetContext("url", sentry.Context{
+				"targetURL": targetURL.String(),
+			})
+		}
 
 		if !isAllowedBSMURL(&targetURL) {
+			if hub != nil {
+				hub.Scope().SetLevel(sentry.LevelInfo)
+				hub.CaptureMessage("disallowed BSM URL requested for relay")
+			}
 			http.Error(w, "Only allowlisted BSM URLs are allowed", http.StatusForbidden)
 			return
 		}
 
 		resp, err := GetCachedBSMResponse(db, &targetURL)
 		if err != nil {
+			if hub != nil {
+				hub.Scope().SetLevel(sentry.LevelWarning)
+				hub.CaptureException(err)
+			}
 			http.Error(w, "Failed to fetch from BSM", http.StatusInternalServerError)
 			return
 		}
 
 		stripped, err := stripResponseKeys(resp)
 		if err != nil {
+			if hub != nil {
+				hub.Scope().SetLevel(sentry.LevelError)
+				hub.CaptureException(err)
+			}
 			http.Error(w, "Internal error occurred", http.StatusInternalServerError)
 			return
 		}
@@ -38,6 +59,10 @@ func GetRelayedBSMData(db *dbx.DB) http.HandlerFunc {
 		w.WriteHeader(http.StatusOK)
 		_, err = w.Write(stripped)
 		if err != nil {
+			if hub != nil {
+				hub.Scope().SetLevel(sentry.LevelWarning)
+				hub.CaptureException(err)
+			}
 			http.Error(w, "Failed to write response", http.StatusInternalServerError)
 			return
 		}

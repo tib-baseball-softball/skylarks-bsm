@@ -4,6 +4,7 @@ go 1.26.2
 
 require (
 	git.berlinskylarks.de/tib-baseball/bsm-go v1.0.1
+	github.com/getsentry/sentry-go v0.46.2
 	github.com/go-chi/chi/v5 v5.2.5
 	github.com/go-chi/cors v1.2.2
 	github.com/go-chi/httprate v0.15.0
