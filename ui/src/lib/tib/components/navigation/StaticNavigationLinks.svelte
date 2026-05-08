@@ -83,22 +83,18 @@
   ul {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
     padding-block: calc(var(--spacing) * 2);
-    gap: calc(var(--spacing) * 2);
+    column-gap: calc(var(--spacing) * 6);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-md);
     box-shadow: var(--shadow-sm);
     padding-left: 0;
-
-    @media (min-width: 80rem) {
-      gap: calc(var(--spacing) * 16);
-    }
   }
 
   li {
-    width: 20%;
     margin-block: calc(var(--spacing) * 2);
   }
 </style>
