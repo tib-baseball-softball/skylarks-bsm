@@ -43,19 +43,11 @@
   }
 
   main {
-    max-width: 1200px;
-    width: 93%;
+    max-width: var(--container-max-width);
+    width: 100%;
     justify-self: center;
     margin-bottom: 2em;
     grid-column: span 1 / span 1;
-
-    @media (min-width: 48rem) {
-      width: 90%;
-    }
-
-    @media (min-width: 64rem) {
-      width: 85%;
-    }
   }
 
   .shame-div {
