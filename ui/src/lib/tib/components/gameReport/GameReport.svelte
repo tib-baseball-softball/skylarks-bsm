@@ -54,7 +54,7 @@
         </section>
       {/if}
 
-      {#if report.gallery}
+      {#if Array.isArray(report.gallery) && report.gallery.length > 0 }
         <section class="gallery-section">
           <h3 class="h3 gallery-title">Bildergalerie</h3>
 
