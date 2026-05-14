@@ -4,14 +4,15 @@ import type {GameReport} from "$lib/tib/types/GameReport.ts";
 
 export class GameReportClient extends TYPO3Client {
   /**
-   * Loads single
-   * @param bsmMatchID
+   * Loads single game report for a given BSM ID.
    * @throws Error
    */
-  public async loadSingleGameReportForBSMMatchID(
-    bsmMatchID: string
+  public async loadSingleGameReportForBSMID(
+    bsmID: number
   ): Promise<GameReport | undefined> {
-    const url = this.buildRequestURL("api/v2/gamereports", [["bsmMatchID", bsmMatchID]]);
+    const url = this.buildRequestURL("api/v2/gamereports", {
+      bsmID: String(bsmID)
+    });
 
     if (env.PUBLIC_APPLICATION_CONTEXT === "Development") {
       console.log(url);

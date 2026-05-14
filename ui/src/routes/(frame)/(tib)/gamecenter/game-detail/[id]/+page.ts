@@ -39,7 +39,7 @@ export const load: PageLoad = async ({parent, params, fetch}) => {
   });
 
   const reportClient = new GameReportClient(fetch);
-  const gameReport = reportClient.loadSingleGameReportForBSMMatchID(match.match_id);
+  const gameReport = reportClient.loadSingleGameReportForBSMID(match.id);
 
   return {
     match,
