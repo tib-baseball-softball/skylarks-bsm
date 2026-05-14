@@ -1,6 +1,6 @@
 docker login
 docker build \
-    --build-arg BUILD_MODE="build:prod" \
+    --build-arg BUILD_MODE="build" \
     --platform=linux/amd64 \
     --tag obnoxieux/skylarks-bsm:latest .
 docker push obnoxieux/skylarks-bsm:latest

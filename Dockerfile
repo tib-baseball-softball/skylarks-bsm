@@ -16,7 +16,7 @@ RUN pnpm $BUILD_MODE
 
 
 # 2) Go build stage
-FROM golang:1.26.2-alpine AS go-builder
+FROM golang:1.26.3-alpine AS go-builder
 WORKDIR /app
 
 COPY --from=ui-builder /app/public ./
