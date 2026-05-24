@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io/fs"
 	"log"
+	"log/slog"
 	"net/http"
 	"os"
 	"path"
@@ -69,11 +70,12 @@ func main() {
 	}
 
 	err = sentry.Init(sentry.ClientOptions{
-		Dsn:            "", // provided via environment
+		Dsn:            os.Getenv("SENTRY_DSN"),
 		Debug:          isDevelopment,
 		SendDefaultPII: false,
 		DisableClientReports: true,
 		Environment: applicationContext,
+		TracesSampleRate: 0.0,
 	})
 	if err != nil {
 		log.Fatalf("sentry.Init: %s", err)
@@ -83,6 +85,7 @@ func main() {
 	sentryMiddleware := sentryhttp.New(sentryhttp.Options{
 		Repanic: true,
 	})
+	slog.Info("Sentry Middleware set up", "DSN", os.Getenv("SENTRY_DSN"))
 
 	r := chi.NewRouter()
 
