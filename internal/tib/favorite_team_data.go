@@ -79,9 +79,7 @@ func LoadHomeData(client bsm.APIClient, entryID int, leagueID int, season int) (
 
 			var wg sync.WaitGroup
 
-			wg.Add(1)
-			go func() {
-				defer wg.Done()
+			wg.Go(func() {
 
 				var matches []bsm.Match
 
@@ -110,7 +108,7 @@ func LoadHomeData(client bsm.APIClient, entryID int, leagueID int, season int) (
 				if leagueEntry.Team != nil {
 				    dataset.StreakData = createStreakDataEntries(matches, leagueEntry.Team.Name)
 				}
-			}()
+			})
 
 			wg.Add(1)
 			go func(leagueEntry bsm.LeagueEntry) {
