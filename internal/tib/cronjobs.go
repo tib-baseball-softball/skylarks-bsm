@@ -1,9 +1,10 @@
 package tib
 
 import (
-	"fmt"
+	"log/slog"
 	"time"
 
+	"git.berlinskylarks.de/tib-baseball/bsm-go"
 	"github.com/getsentry/sentry-go"
 	"github.com/pocketbase/dbx"
 )
@@ -12,7 +13,7 @@ import (
 func RemoveOutdatedCaches(db *dbx.DB) {
 	defer func() {
 		if r := recover(); r != nil {
-			fmt.Println("Recovered from panic in RemoveOutdatedCaches", r)
+			slog.Error("Recovered from panic in RemoveOutdatedCaches", "error", r)
 		}
 	}()
 
@@ -28,18 +29,34 @@ func RemoveOutdatedCaches(db *dbx.DB) {
 		).Execute()
 		if err != nil {
 			sentry.CaptureException(err)
-			fmt.Println("Error executing cleanup task:", err)
+			slog.Error("Error executing cleanup task", "error", err)
 			break
 		}
 
 		affected, err := result.RowsAffected()
 		if err != nil {
 			sentry.CaptureException(err)
-			fmt.Println("Error retrieving affected rows:", err)
+			slog.Error("Error retrieving affected rows", "error", err)
 			break
 		}
 
-		fmt.Println("Cleanup task executed at:", time.Now())
-		fmt.Println("Affected Rows:", affected)
+		slog.Info("Cleanup task executed", "affectedRows", affected)
+	}
+}
+
+// StartImportTeamDatasetsJob periodically updates the team datasets.
+func StartImportTeamDatasetsJob(db *dbx.DB, client bsm.APIClient) {
+	defer func() {
+		if r := recover(); r != nil {
+			slog.Error("Recovered from panic in StartImportTeamDatasetsJob", "error", r)
+		}
+	}()
+
+	ticker := time.NewTicker(120 * time.Minute)
+	defer ticker.Stop()
+
+	for {
+		<-ticker.C
+		ImportTeamDatasets(db, client)
 	}
 }

@@ -117,12 +117,14 @@ func main() {
 
 	bsmClient := bsm.NewAPIClient()
 	r.Route("/api/bsm/relay", func(r chi.Router) {
-		r.Get("/*", tib.GetRelayedBSMData(db))
+		r.Get("/favorite-team", tib.GetFavoriteTeamData(db, bsmClient))
 		r.Get("/top10/{league}", tib.GetLeagueLeaders(db, bsmClient))
+		r.Get("/*", tib.GetRelayedBSMData(db))
 	})
 
 	// ------------- Cron jobs -----------------//
 	go tib.RemoveOutdatedCaches(db)
+	go tib.StartImportTeamDatasetsJob(db, bsmClient)
 
 	log.Println("server listening on port 8090")
 	err = http.ListenAndServe(":8090", r)
