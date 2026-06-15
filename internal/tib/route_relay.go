@@ -49,6 +49,10 @@ func GetRelayedBSMData(db *dbx.DB) http.HandlerFunc {
 		if err != nil {
 			if hub != nil {
 				hub.Scope().SetLevel(sentry.LevelError)
+				hub.Scope().SetTags(map[string]string{
+					"url":      targetURL.String(),
+					"response": resp,
+				})
 				hub.CaptureException(err)
 			}
 			http.Error(w, "Internal error occurred", http.StatusInternalServerError)
@@ -83,6 +87,11 @@ func stripResponseKeys(cachedResponseBody string) ([]byte, error) {
 
 	err := json.Unmarshal([]byte(cachedResponseBody), &arrayShapeData)
 	if err != nil {
+		if _, ok := errors.AsType[*json.SyntaxError](err); ok {
+			// parsing failed completely, value is not usable
+			return bytes, err
+		}
+
 		if _, ok := errors.AsType[*json.UnmarshalTypeError](err); ok {
 			// response is not JSON array, try to unmarshal as an object
 			err = json.Unmarshal([]byte(cachedResponseBody), &objectShapeData)
