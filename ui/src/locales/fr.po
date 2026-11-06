@@ -108,11 +108,9 @@ msgstr "Chargement des matchs..."
 #. 0: error.message
 #. 0: error.message
 #. 0: error.message
-#. 0: error.message
 #: src/lib/tib/components/match/CurrentMatchBlock.svelte
 #: src/routes/(frame)/(tib)/gamecenter/+page.svelte
 #: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "error loading matches: {0}"
 msgstr "erreur lors du chargement des matchs : {0}"
 
@@ -196,17 +194,13 @@ msgstr "Erreur : {0}"
 
 #: src/lib/tib/components/navigation/StaticNavigationLinks.svelte
 #: src/routes/(frame)/(tib)/leagues/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/+page.svelte
 msgid "Leagues"
 msgstr "Ligues"
 
 #: src/routes/(frame)/(tib)/leagues/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/+page.svelte
 msgid "Loading Leagues..."
 msgstr "Chargement des ligues..."
 
-#. 0: error.message
-#. 0: error.message
 #. 0: error.message
 #. 0: error.message
 #. 0: error.message
@@ -226,8 +220,6 @@ msgstr "Chargement des ligues..."
 #: src/routes/(frame)/(tib)/league_entries/[entry]/+page.svelte
 #: src/routes/(frame)/(tib)/leagues/+page.svelte
 #: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/players/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/teams/+page.svelte
 #: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
@@ -468,7 +460,6 @@ msgstr "Offensive"
 #: src/lib/tib/components/boxscore/MatchBoxscoreSection.svelte
 #: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
 #: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "Pitching"
 msgstr "Lancers"
 
@@ -677,10 +668,6 @@ msgid "Spiel-ID"
 msgstr "ID de match"
 
 #: src/lib/tib/components/match/MatchDetailStatsCard.svelte
-msgid "geplante Innings"
-msgstr "Manches prévues"
-
-#: src/lib/tib/components/match/MatchDetailStatsCard.svelte
 msgid "Link zum Scoresheet"
 msgstr "Lien vers la feuille de pointage"
 
@@ -711,13 +698,11 @@ msgstr "Reporté"
 
 #: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
 #: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "Batting"
 msgstr "Frappe"
 
 #: src/lib/tib/components/stats/BaseballStatsDatatable.svelte
 #: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "Fielding"
 msgstr "Défense"
 
@@ -1026,28 +1011,23 @@ msgid "Umpire Licenses"
 msgstr "Licences d'arbitre"
 
 #: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 #: src/routes/(frame)/(tib)/teams/[id]/+page.svelte
 msgid "Information"
 msgstr "Information"
 
 #: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 msgid "League Stats"
 msgstr "Stats de la ligue"
 
 #: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 msgid "Statistics about current league leaders in various statistical categories can be found on a dedicated subpage."
 msgstr "Les statistiques sur les leaders actuels de la ligue dans diverses catégories statistiques se trouvent sur une sous-page dédiée."
 
 #: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 msgid "Go to stats"
 msgstr "Aller aux statistiques"
 
 #: src/routes/(frame)/(tib)/leagues/[id]/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/+page.svelte
 msgid "Tabelle"
 msgstr "Tableau"
 
@@ -1204,9 +1184,7 @@ msgid "Official Details"
 msgstr "Détails de l'officiel"
 
 #. 0: data.leagueGroup.name; 1: data.leagueGroup.season
-#. 0: data.leagueGroup.name; 1: data.leagueGroup.season
 #: src/routes/(frame)/(tib)/leagues/[id]/stats/+page.svelte
-#: src/routes/(frame)/(tib)/ligen/[id]/stats/+page.svelte
 msgid "Leaderboards for {0} ({1})"
 msgstr "Classements pour {0} ({1})"
 
@@ -1265,10 +1243,14 @@ msgstr ""
 msgid "Show <0/>"
 msgstr ""
 
-#: src/lib/dp/components/modal/sheet/sheet-content.svelte
-msgid "Close"
-msgstr ""
-
 #: src/lib/tib/components/navigation/StaticNavigationLinks.svelte
 msgid "Home"
+msgstr ""
+
+#: src/lib/tib/components/match/MatchDetailStatsCard.svelte
+msgid "Livestream URL"
+msgstr ""
+
+#: src/lib/dp/components/datatable/ThFilter.svelte
+msgid "Filter..."
 msgstr ""

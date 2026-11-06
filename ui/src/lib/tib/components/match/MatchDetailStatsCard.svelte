@@ -1,49 +1,55 @@
 <script lang="ts">
-  import type {Match} from "bsm.js";
-  import {Hourglass, Info, Link, Tag} from "lucide-svelte";
+  import type { Match } from "bsm.js";
+  import { Info, Link, Tag, Video } from "lucide-svelte";
 
   interface Props {
     match: Match;
   }
 
-  let {match}: Props = $props();
+  let { match }: Props = $props();
 </script>
 
 <div class="card root">
   <div class="row">
-    <Tag/>
+    <Tag />
     <div>
       <p>{match.league.name} ({match.league.acronym})</p>
       <p class="sub">Liga</p>
     </div>
   </div>
 
-  <hr>
+  <hr />
 
   <div class="row">
-    <Info/>
+    <Info />
     <div>
       <p>{match.match_id}</p>
       <p class="sub">Spiel-ID</p>
     </div>
   </div>
 
-  <hr>
+  <hr />
 
   <div class="row">
-    <Hourglass/>
+    <Video />
     <div>
-      <p>{match.planned_innings}</p>
-      <p class="sub">geplante Innings</p>
+      {#if match.livestream_url}
+        <a href={match.livestream_url}>{match.livestream_url}</a>
+      {:else}
+        —
+      {/if}
+      <p class="sub">Livestream URL</p>
     </div>
   </div>
 
-  <hr>
+  <hr />
 
   <div class="row">
-    <Link/>
+    <Link />
     {#if match.scoresheet_url}
-      <a class="anchor" target="_blank" href="{match.scoresheet_url}">Link zum Scoresheet</a>
+      <a class="anchor" target="_blank" href={match.scoresheet_url}
+        >Link zum Scoresheet</a
+      >
     {:else}
       <span>Kein Scoresheet vorhanden.</span>
     {/if}
