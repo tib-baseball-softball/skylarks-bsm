@@ -90,12 +90,12 @@ func main() {
 	r := chi.NewRouter()
 
 	r.Use(middleware.RequestID)
-	r.Use(middleware.Heartbeat("/health"))
 	r.Use(middleware.ClientIPFromRemoteAddr)
 	r.Use(httprate.LimitBy(300, time.Second, func(r *http.Request) (string, error) {
 		return httprate.CanonicalizeIP(middleware.GetClientIP(r.Context())), nil
 	}))
 	r.Use(middleware.Logger)
+	r.Use(middleware.Heartbeat("/health"))
 	r.Use(middleware.Recoverer)
 	r.Use(sentryMiddleware.Handle)
 
