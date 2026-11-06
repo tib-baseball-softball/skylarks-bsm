@@ -90,7 +90,7 @@ func main() {
 	r := chi.NewRouter()
 
 	r.Use(middleware.RequestID)
-	r.Use(middleware.ClientIPFromRemoteAddr)
+	r.Use(middleware.ClientIPFromHeader("X-Forwarded-For")) // only reachable via proxy, no ports are exposed
 	r.Use(httprate.LimitBy(300, time.Second, func(r *http.Request) (string, error) {
 		return httprate.CanonicalizeIP(middleware.GetClientIP(r.Context())), nil
 	}))
