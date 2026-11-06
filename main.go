@@ -27,8 +27,8 @@ import (
 )
 
 const (
-    ContextDevelopment = "development"
-    ContextProduction  = "production"
+	ContextDevelopment = "development"
+	ContextProduction  = "production"
 )
 
 //go:embed public/*
@@ -50,7 +50,7 @@ func init() {
 }
 
 func main() {
-    applicationContext := os.Getenv("APPLICATION_CONTEXT")
+	applicationContext := os.Getenv("APPLICATION_CONTEXT")
 	isDevelopment := applicationContext == ContextDevelopment
 
 	db, err := DefaultDBConnect("data/db.sqlite")
@@ -70,12 +70,12 @@ func main() {
 	}
 
 	err = sentry.Init(sentry.ClientOptions{
-		Dsn:            os.Getenv("SENTRY_DSN"),
-		Debug:          isDevelopment,
-		SendDefaultPII: false,
+		Dsn:                  os.Getenv("SENTRY_DSN"),
+		Debug:                isDevelopment,
+		SendDefaultPII:       false,
 		DisableClientReports: true,
-		Environment: applicationContext,
-		TracesSampleRate: 0.0,
+		Environment:          applicationContext,
+		TracesSampleRate:     0.0,
 	})
 	if err != nil {
 		log.Fatalf("sentry.Init: %s", err)
@@ -90,10 +90,12 @@ func main() {
 	r := chi.NewRouter()
 
 	r.Use(middleware.RequestID)
-	r.Use(middleware.RealIP)
-	r.Use(middleware.Logger)
 	r.Use(middleware.Heartbeat("/health"))
-	r.Use(httprate.LimitByIP(300, time.Second))
+	r.Use(middleware.ClientIPFromRemoteAddr)
+	r.Use(httprate.LimitBy(300, time.Second, func(r *http.Request) (string, error) {
+		return httprate.CanonicalizeIP(middleware.GetClientIP(r.Context())), nil
+	}))
+	r.Use(middleware.Logger)
 	r.Use(middleware.Recoverer)
 	r.Use(sentryMiddleware.Handle)
 
