@@ -1,5 +1,5 @@
 # 1) UI build stage
-FROM node:24-alpine AS ui-builder
+FROM node:26-alpine AS ui-builder
 WORKDIR /app/ui
 
 RUN npm i -g corepack && corepack enable && corepack prepare pnpm@latest --activate
@@ -16,7 +16,7 @@ RUN pnpm $BUILD_MODE
 
 
 # 2) Go build stage
-FROM golang:1.26.3-alpine AS go-builder
+FROM golang:1.27-alpine AS go-builder
 WORKDIR /app
 
 COPY --from=ui-builder /app/public ./
@@ -29,7 +29,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o bsmrelay
 
 
 # 3) Final runtime image
-FROM alpine:3.20
+FROM alpine:3
 WORKDIR /app
 
 RUN apk add --no-cache ca-certificates tzdata && update-ca-certificates
