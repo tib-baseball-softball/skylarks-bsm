@@ -1,3 +1,3 @@
-minimumReleaseAge: 1440
+minimumReleaseAge: 2880
 minimumReleaseAgeExclude:
   - bsm.js
